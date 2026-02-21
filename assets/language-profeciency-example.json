@@ -1,0 +1,962 @@
+[
+  {
+    "id": 1,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "The construction team had an arduous task of rehabilitating the houses destroyed by the typhoon.",
+    "choices": [
+      "A. challenging",
+      "B. difficult",
+      "C. straightforward",
+      "D. exigent"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 2,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "Disposing toxic waste into rivers has a deleterious effect on the environment.",
+    "choices": [
+      "A. beneficial",
+      "B. devastating",
+      "C. developmental",
+      "D. harmful"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 3,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "The lone activist desists foreign invasion.",
+    "choices": [
+      "A. embrace",
+      "B. stop",
+      "C. continue",
+      "D. welcome"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 4,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "Although the commendation was delayed, the press secretary recognized the exemplary services of the journalists.",
+    "choices": [
+      "A. cautionary",
+      "B. commendable",
+      "C. prolific",
+      "D. fraudulent"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 5,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "Yes, the attack was devoid of tactical planning.",
+    "choices": [
+      "A. critical",
+      "B. present",
+      "C. lacking",
+      "D. comprehensive"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 6,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "The fickle-minded policy maker failed to deliver once again.",
+    "choices": [
+      "A. enigmatic",
+      "B. charismatic",
+      "C. treacherous",
+      "D. indecisive"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 7,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "Slaves languish in pain when the get whipped by their masters.",
+    "choices": [
+      "A. become weak",
+      "B. flourish",
+      "C. faint",
+      "D. vulnerable"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 8,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "The prisoner's bitterness evoked by the war still resides in his heart.",
+    "choices": [
+      "A. resentment",
+      "B. kindness",
+      "C. awareness",
+      "D. lessons"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 9,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "The committee members acceded to the protesters' demands.",
+    "choices": [
+      "A. refute",
+      "B. yield",
+      "C. amended",
+      "D. antagonized"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 10,
+    "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
+    "question": "The president wanted to extricate himself from the issue to avoid controversy.",
+    "choices": [
+      "A. disconnect",
+      "B. entangle",
+      "C. include",
+      "D. assign"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 11,
+    "instruction": "Direksyon. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.",
+    "question": "Ang alab ng puso ko ay ipaglaban ka.",
+    "choices": [
+      "A. pighati",
+      "B. sakit",
+      "C. damdamin",
+      "D. poot"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 12,
+    "instruction": "Direksyon. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.",
+    "question": "Kahit para bang pasan ko ang daigdig, hindi ako susuko.",
+    "choices": [
+      "A. dala-dala",
+      "B. mayaman",
+      "C. kuba",
+      "D. marami akong problema"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 13,
+    "instruction": "Direksyon. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.",
+    "question": "Nang maglaon, ang kanyang busilak na puso ang naghatid sa kanya ng maayos na buhay.",
+    "choices": [
+      "A. mapula",
+      "B. madugo",
+      "C. malinis",
+      "D. maramdamin"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 14,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "benign acts of charity",
+    "choices": [
+      "A. compassionate",
+      "B. sympathy",
+      "C. apathy",
+      "D. antipathy"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 15,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "altruistic goals",
+    "choices": [
+      "A. selfish",
+      "B. unselfish",
+      "C. ambitious",
+      "D. loud"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 16,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "achievements were applauded",
+    "choices": [
+      "A. celebrated",
+      "B. reprimanded",
+      "C. censured",
+      "D. admonished"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 17,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "defiled by his opponents",
+    "choices": [
+      "A. respected",
+      "B. tarnished",
+      "C. maligned",
+      "D. criticized"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 18,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "tugatog ng tagumpay",
+    "choices": [
+      "A. rurok",
+      "B. katuparan",
+      "C. ilalim",
+      "D. nakalalasing"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 19,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "mapag-alinlangang puso",
+    "choices": [
+      "A. nag-aatubili",
+      "B. mapagduda",
+      "C. mapagmahal",
+      "D. sigurado"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 20,
+    "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
+    "question": "walang puwang sa kapatawaran",
+    "choices": [
+      "A. mapagbigay",
+      "B. madamot",
+      "C. malupit",
+      "D. bigo"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 21,
+    "instruction": "Spelling. Select the word which is spelled correctly.",
+    "question": "Select the correct spelling:",
+    "choices": [
+      "A. ocasion",
+      "B. occasion",
+      "C. occassion",
+      "D. ocassion"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 22,
+    "instruction": "Spelling. Select the word which is spelled correctly.",
+    "question": "Select the correct spelling:",
+    "choices": [
+      "A. lightwieght",
+      "B. lightweigth",
+      "C. lieghtweight",
+      "D. lightweight"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 23,
+    "instruction": "Spelling. Select the word which is spelled correctly.",
+    "question": "Select the correct spelling:",
+    "choices": [
+      "A. rythm",
+      "B. rhytm",
+      "C. rhythm",
+      "D. rhythym"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 24,
+    "instruction": "Spelling. Select the word which is spelled correctly.",
+    "question": "Select the correct spelling:",
+    "choices": [
+      "A. privilege",
+      "B. priviledge",
+      "C. privelege",
+      "D. priveledge"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 25,
+    "instruction": "Spelling. Select the word which is spelled correctly.",
+    "question": "Select the correct spelling:",
+    "choices": [
+      "A. accomodate",
+      "B. accommodate",
+      "C. acommodate",
+      "D. acomoddate"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 26,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Ms. Dinna Lee-Go does not ____ Metro Manila Development Authority's plan of bulldozing the Katipunan Avenue islands in the name of traffic decongestion.",
+    "choices": [
+      "A. agree with",
+      "B. agree on",
+      "C. agree in",
+      "D. agree about"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 27,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "____ peso you pay for a National Geographic magazine goes to the research on wild life, like the research on anacondas.",
+    "choices": [
+      "A. Each",
+      "B. Every",
+      "C. Even",
+      "D. Except"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 28,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Azerbaijanis have ____ hope that their crops will grow again in the oil-polluted land in Baku.",
+    "choices": [
+      "A. few",
+      "B. little",
+      "C. pieces of",
+      "D. many"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 29,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "The music ____ of the ceremony should therefore be expressions which glorify the Lord rather than just the bride and groom.",
+    "choices": [
+      "A. select",
+      "B. selector",
+      "C. selective",
+      "D. selection"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 30,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "The list was compiled through the ____ of the collector.",
+    "choices": [
+      "A. kind",
+      "B. kindly",
+      "C. kindness",
+      "D. kinder"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 31,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Nearly all ____ demand observance of the standard punctuation.",
+    "choices": [
+      "A. editor-in-chief",
+      "B. editors-in-chief",
+      "C. editor-in-chiefs",
+      "D. editors-in-chiefs"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 32,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "The ____ were grazing when the lion attacked.",
+    "choices": [
+      "A. deer",
+      "B. deers",
+      "C. doe",
+      "D. fawn"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 33,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Berto wore a thin sport shirt, Nike warmup pants, and shower clogs when I visited ____ unannounced.",
+    "choices": [
+      "A. he",
+      "B. him",
+      "C. his",
+      "D. himself"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 34,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Adel, ____ perseverance is unwavering, has a bright future ahead of her.",
+    "choices": [
+      "A. who",
+      "B. which",
+      "C. who's",
+      "D. whose"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 35,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Miguel has ____ big since I last saw him.",
+    "choices": [
+      "A. grow",
+      "B. grew",
+      "C. growed",
+      "D. grown"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 36,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "____ siya ng gatas araw-araw.",
+    "choices": [
+      "A. Nag-inom",
+      "B. Umiinom",
+      "C. Iniinom",
+      "D. Ininom"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 37,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Gaya ____ nakasanayan, namimitas ang magpipinsan ng bulaklak tuwing hapon para ilagay sa altar.",
+    "choices": [
+      "A. ng",
+      "B. nang",
+      "C. na",
+      "D. na ang"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 38,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Kinuha ____ ang mga kabibe mula sa tabing dagat.",
+    "choices": [
+      "A. nila",
+      "B. sila",
+      "C. kanila",
+      "D. siya"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 39,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "Hindi makatulog ang bisita dahil ____.",
+    "choices": [
+      "A. namamahay",
+      "B. kapitbahay",
+      "C. binabahay",
+      "D. bahay-bahayan"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 40,
+    "instruction": "Sentence Completion. Select the word or phrase that most appropriately completes the sentence.",
+    "question": "____ Ningning at Daniel ang naatasang mamuno sa pagpupulong.",
+    "choices": [
+      "A. Si",
+      "B. Sina",
+      "C. Sila",
+      "D. Siya"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 41,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "He __went__ (A) into his room, __closed the door__, (B) __opened the window__ (C) and __goes to bed__ (D).",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 42,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "Some of the boys __who__ (A) __plays basketball__ (B) also __like__(C) __to play football.__ (D)",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 43,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "__You__ (A) and __me__ (B) should __make__ (C) a __pact__. (D)",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 44,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "__When__ (A) you __pass__ (B) the UPCAT, __one__ (C) should be __proud__. (D)",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 45,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "Neither Kate __or__ (A) Sarah __likes__ (B) the dessert __prepared__ (C) __by the chef__. (D)",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 46,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "As dedicated __barrio doctors__ (A) Kenneth __plans__ (B) to become members __of the relief team__ (C) to be sent __to Aurora__ (D).",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 47,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "Ilagay mo __ng__ (A) maayos ang lumang pigurin __sa__ (B) __ibabaw__ (C) ng __malaking  eskaparate__(D).",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 48,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "__Natatakpan__ (A) ng kadiliman ang __iba't-ibang__ (B) __makukulay__(C) __na__ (D) larawan .",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 49,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "__Napagalaman__ (A) na __nakipagsabwatan__ (B) siya sa kanyang tauhan __upang__ (C) maikubli ang katiwaliang __kanyang ginawa__ (D).",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 50,
+    "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
+    "question": "__Magpahinga ka__ (A) na __at__(B) __pahiran mo__(C) ang pawis na __nasa iyong batok__ (D).",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 51,
+    "instruction": "Paragraph Completion: The following paragraph has some words missing as indicated by the numbered blanks. Read the paragraph carefully and select the best answer for the number from the options given.\n\nSlips of the tongue are almost inevitable. For (51) 1,000 words spoken, we make one or two errors. (52) that the average pace of speech is 150 words a minute, a slip is (53) to occur about once every seven minutes of continuous talk. Each day, most of us make (54) between 7 and 22 verbal slips. \n\nSigmund Freud, (55) name is indelibly linked with such gaffes, called them Fehlleistungen (faulty actions) in his 1901 book, The Psychopathology of Everyday Life. He deemed them notable for (56) an unconscious thought, belief, wish, or motive.",
+    "question": "Select the correct word for blank 51.",
+    "choices": [
+      "A. all",
+      "B. every",
+      "C. each",
+      "D. some"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 52,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 51 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 52.",
+    "choices": [
+      "A. Considering",
+      "B. Realizing",
+      "C. Stating",
+      "D. Explaining"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 53,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 51 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 53.",
+    "choices": [
+      "A. definite",
+      "B. rarely",
+      "C. doubtful",
+      "D. bound"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 54,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 51 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 54.",
+    "choices": [
+      "A. among",
+      "B. somewhere",
+      "C. exactly",
+      "D. in"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 55,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 51 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 55.",
+    "choices": [
+      "A. whose",
+      "B. who's",
+      "C. who",
+      "D. whom"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 56,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 51 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 56.",
+    "choices": [
+      "A. imagining",
+      "B. confusing",
+      "C. revealing",
+      "D. discovering"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 57,
+    "instruction": "Paragraph Completion: The following paragraph has some words missing as indicated by the numbered blanks. Read the paragraph carefully and select the best answer for the number from the options given.\n\nThe coalition's board (57) the severity of the climate crisis, but their fundamental pitch could win over the most jaded executives: If you don't change your business, you won't have (58) down the line. There is now a scientific (59) that among the effects of man-made climate change is a massive hit to the economy. The US government's Fourth National Climate Assessment released in November stated that the US economy will shrink by 10% if the (60) pace of climate change continues.",
+    "question": "Select the correct word for blank 57.",
+    "choices": [
+      "A. dismissed",
+      "B. recognized",
+      "C. inferred",
+      "D. encouraged"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 58,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 57 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 58.",
+    "choices": [
+      "A. many",
+      "B. sure",
+      "C. once",
+      "D. one"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 59,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 57 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 59.",
+    "choices": [
+      "A. confusion",
+      "B. conjunction",
+      "C. compromise",
+      "D. consensus"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 60,
+    "instruction": "Paragraph Completion: Read the provided paragraph in question 57 and select the best answer for the numbered blank.",
+    "question": "Select the correct word for blank 60.",
+    "choices": [
+      "A. previous",
+      "B. smooth",
+      "C. current",
+      "D. fair"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 61,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) alcohol-related social media posts\n(2) a new study says\n(3) appear to influence\n(4) youth alcohol consumption",
+    "choices": [
+      "A. 4-3-1-2",
+      "B. 3-1-4-2",
+      "C. 1-3-4-2",
+      "D. 2-4-1-3"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 62,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) whom they even describe\n(2) the greatness of Rizal\n(3) as the greatest Filipino of all time\n(4) who fully appreciate\n(5) there are a lot of Filipino people",
+    "choices": [
+      "A. 1-3-5-4-2",
+      "B. 5-1-3-2-4",
+      "C. 4-5-3-1-2",
+      "D. 5-4-2-1-3"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 63,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "Memory transfer has been at the heart of science fiction for decades, but it's becoming more like science fact.\n(1) The snails were trained to develop a defensive reaction.\n(2) The research, published in the journal eNeuro, could provide new clues in the search for the physical basis of memory.\n(3) When the RNA was inserted into snails that had not undergone this process, they behaved just as if they had been sensitized.\n(4) A team successfully transplanted memories by transferring a form of genetic information called RNA from one snail into another.",
+    "choices": [
+      "A. 4-1-3-2",
+      "B. 1-3-2-4",
+      "C. 4-3-2-1",
+      "D. 1-2-4-3"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 64,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) coffee\n(2) is\n(3) the chairman's\n(4) mug\n(5) filled with",
+    "choices": [
+      "A. 4-2-5-3-1",
+      "B. 1-4-2-5-3",
+      "C. 3-4-2-5-1",
+      "D. 5-1-3-4-2"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 65,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) The moves of the game, by contrast, are infinite and complex, although they usually involve the manipulation\n(2) All life is a game of power.\n(3) As for the rules, these are only discovered by playing the game to the end.\n(4) The object of the game is simple enough: to know what you want and get it.",
+    "choices": [
+      "A. 2-4-1-3",
+      "B. 4-2-3-1",
+      "C. 1-3-4-2",
+      "D. 2-3-4-1"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 66,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) sa kusina\n(2) mo\n(3) na kutsilyo\n(4) kunin\n(5) ang matalas",
+    "choices": [
+      "A. 5-3-1-4-2",
+      "B. 4-2-3-1-5",
+      "C. 4-2-5-3-1",
+      "D. 1-2-4-3-5"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 67,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) ang ginamit ng manunulat\n(2) upang isulat\n(3) ang lumang makinilya\n(4) ang kanyang maikling kwento",
+    "choices": [
+      "A. 1-2-4-3",
+      "B. 2-4-1-3",
+      "C. 3-1-2-4",
+      "D. 4-1-2-3"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 68,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) Hindi magkandaugaga ang ginang sa pagsusukat sa sapatos na bagong bili para sa anak.\n(2) Gulung-gulo ang mag-anak ni Aling Turing dahil sa gabi ay konsorte ang binata.\n(3) Tinutukso ni Tony ang kapatid sa kasuotan nito.\n(4) Tinatahi naman ni Eden ang isusuot ng kapatid sa gabi ng parada.",
+    "choices": [
+      "A. 1-2-3-4",
+      "B. 2-1-4-3",
+      "C. 4-3-2-1",
+      "D. 3-4-1-2"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 69,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) Nais ng mestizang dalaga na ang Constantino ay kanyang kapatid.\n(2) Hindi masabi ni Aling Miray ang kanyang pakay\n(3) Dumating si Aling Miray sa bahay ni Aling Tinding.\n(4) Tumanggi ang Reyna Elena na maging konsorte si Ting.",
+    "choices": [
+      "A. 3-2-4-1",
+      "B. 4-3-2-1",
+      "C. 1-2-3-4",
+      "D. 1-4-3-2"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 70,
+    "instruction": "Sequencing: Determine the best order of the following words, phrases, and sentences to form a logical, unified, and coherent sentence or paragraph.",
+    "question": "(1) Pinakain ni Impong Sela ng kaning sinabawan ng sinigang na karne.\n(2) Pinagmasdan ni Impong Sela ang apo niyang may sakit.\n(3) Nagising si Pepe at humingi ng pagkain kay Impong Sela.\n(4) Ikinabalisa niya ang pabalik-balik na lagnat ni Pepe.",
+    "choices": [
+      "A. 1-2-3-4",
+      "B. 4-3-2-1",
+      "C. 3-1-4-2",
+      "D. 2-4-3-1"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 71,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. You can never really can tell.",
+      "B. You can never really tell.",
+      "C. Really you never can tell.",
+      "D. You can really never can tell."
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 72,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. She wanted to know if did you use the bike without permission.",
+      "B. She wanted to know if you use the bike without permission.",
+      "C. She wanted to know whether you used the bike without permission.",
+      "D. She wanted to know if you used the bike without permission."
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 73,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. The teenager assured his sister I will ask permission from their mother next time.",
+      "B. I will ask permission from their mother next time was the assurance by the teenager to his sister.",
+      "C. The teenager assured his sister that he will ask permission from their mother next time.",
+      "D. The teenager assured his sister that he would ask permission from their mother next time."
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 74,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Lisa can't understand why Keith doesn't dance as well as she.",
+      "B. Lisa can't understand how Keith doesn't dance as well as her.",
+      "C. Lisa can't understand why Keith doesn't dance as well as her.",
+      "D. Lisa can't understand the reason why Keith doesn't dance as well as her."
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 75,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Empoy said that \"I will be waiting for you across the street.\"",
+      "B. Empoy said that he will be waiting for us across the street.",
+      "C. Empoy said that he would be waiting for us across the street.",
+      "D. Empoy said that, \"I would be waiting for you across the street.\""
+    ],
+    "correct_answer": 2
+  },
+  {
+    "id": 76,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Bumalik na ang sundalo sa kani-kanilang mga pwesto.",
+      "B. Bumalik na ang sundalo at ang kapitan sa kani-kaniyang pwesto.",
+      "C. Bumalik na ang mga sundalo sa kani-kaniyang pwesto.",
+      "D. Bumalik na ang kapitan sa kani-kanilang pwesto."
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": 77,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Ang magagaling ang mga doctor na sumuri ng kanyang malubhang sakit.",
+      "B. Kahit salat sa pamumuhay, nagsusumikap ang kanyang ina ay maipagamot siya.",
+      "C. Ang tanging paraan na lamang para maibsan ang kanyang nadaramang sakit ang sumaiilalim sa isang operasyon.",
+      "D. Matapos and operasyon at iland araw na pahinga, nawala and sakit na kanyang iniinda at bumuti ang kanyang pakiramdam."
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 78,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Mahirap magmahal ng taong hindi ka mahal.",
+      "B. Sana'y maunawaan mo ito ng lubusan.",
+      "C. Sinabi ko ng taimtim sa aking sarili na handa na ulit akong magmahai at masaktan.",
+      "D. Sa pagkakataong ito ay huwag sanang paglauran nang sinuman."
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": 79,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Pupunta sila Kevin at Tony sa pagtitipon bukas.",
+      "B. Sasama raw kina Fred sina Alex at Jeff.",
+      "C. Kahit walang paalam, dadalhin nila Alex at Kevin ang kotse ng kanilang mga magulang.",
+      "D. Sa bahay nina Fred at Jeff makikitulog si Alex."
+    ],
+    "correct_answer": 3
+  },
+  {
+    "id": 80,
+    "instruction": "Directions: Choose the best from among the statements given below.",
+    "question": "Which of the following statements is the most appropriate or correct?",
+    "choices": [
+      "A. Pumunta ako sa tindahan ni Aling Nena para bumili ng suka at iba't-ibang sitserya.",
+      "B. Habang akoy nagbabayad, nakita ko ang isang dalagang nakadungaw sa bintana.",
+      "C. Natulala ako, nalaglag ang puso ko at nalaglag din ang sukang hawak ko.",
+      "D. Napasigaw si Aling Nena at ako namay parang nakuryenteng pusa."
+    ],
+    "correct_answer": 2
+  }
+]
