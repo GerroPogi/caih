@@ -2,7 +2,7 @@
     {
         "id": 1,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "The construction team had an arduous task of rehabilitating the houses destroyed by the typhoon.",
+        "question": "The construction team had an <u>arduous</u> task of rehabilitating the houses destroyed by the typhoon.",
         "choices": [
             "A. challenging",
             "B. difficult",
@@ -15,7 +15,7 @@
     {
         "id": 2,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "Disposing toxic waste into rivers has a deleterious effect on the environment.",
+        "question": "Disposing toxic waste into rivers has a <u>deleterious</u> effect on the environment.",
         "choices": [
             "A. beneficial",
             "B. devastating",
@@ -28,7 +28,7 @@
     {
         "id": 3,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "The lone activist desists foreign invasion.",
+        "question": "The lone activist <u>desists</u> foreign invasion.",
         "choices": [
             "A. embrace",
             "B. stop",
@@ -41,7 +41,7 @@
     {
         "id": 4,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "Although the commendation was delayed, the press secretary recognized the exemplary services of the journalists.",
+        "question": "Although the commendation was delayed, the press secretary recognized the <u>exemplary</u> services of the journalists.",
         "choices": [
             "A. cautionary",
             "B. commendable",
@@ -54,7 +54,7 @@
     {
         "id": 5,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "Yes, the attack was devoid of tactical planning.",
+        "question": "Yes, the attack was <u>devoid</u> of tactical planning.",
         "choices": [
             "A. critical",
             "B. present",
@@ -67,7 +67,7 @@
     {
         "id": 6,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "The fickle-minded policy maker failed to deliver once again.",
+        "question": "The <u>fickle-minded</u> policy maker failed to deliver once again.",
         "choices": [
             "A. enigmatic",
             "B. charismatic",
@@ -80,7 +80,7 @@
     {
         "id": 7,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "Slaves languish in pain when the get whipped by their masters.",
+        "question": "Slaves <u>languish</u> in pain when the get whipped by their masters.",
         "choices": [
             "A. become weak",
             "B. flourish",
@@ -93,7 +93,7 @@
     {
         "id": 8,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "The prisoner's bitterness evoked by the war still resides in his heart.",
+        "question": "The prisoner's <u>bitterness</u> evoked by the war still resides in his heart.",
         "choices": [
             "A. resentment",
             "B. kindness",
@@ -106,7 +106,7 @@
     {
         "id": 9,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "The committee members acceded to the protesters' demands.",
+        "question": "The committee members <u>acceded</u> to the protesters' demands.",
         "choices": [
             "A. refute",
             "B. yield",
@@ -119,7 +119,7 @@
     {
         "id": 10,
         "instruction": "Each of the sentences below contains an underlined word or phrase. From the choices, select the one that best fits the context of the underlined word in the sentence.",
-        "question": "The president wanted to extricate himself from the issue to avoid controversy.",
+        "question": "The president wanted to <u>extricate</u> himself from the issue to avoid controversy.",
         "choices": [
             "A. disconnect",
             "B. entangle",
@@ -132,7 +132,7 @@
     {
         "id": 11,
         "instruction": "Direksyon. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.",
-        "question": "Ang alab ng puso ko ay ipaglaban ka.",
+        "question": "Ang <u>alab ng pus</u> ko ay ipaglaban ka.",
         "choices": [
             "A. pighati",
             "B. sakit",
@@ -145,7 +145,7 @@
     {
         "id": 12,
         "instruction": "Direksyon. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.",
-        "question": "Kahit para bang pasan ko ang daigdig, hindi ako susuko.",
+        "question": "Kahit para bang <u>pasan</u> ko ang daigdig, hindi ako susuko.",
         "choices": [
             "A. dala-dala",
             "B. mayaman",
@@ -158,7 +158,7 @@
     {
         "id": 13,
         "instruction": "Direksyon. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.",
-        "question": "Nang maglaon, ang kanyang busilak na puso ang naghatid sa kanya ng maayos na buhay.",
+        "question": "Nang maglaon, ang kanyang <u>busilak</u> na puso ang naghatid sa kanya ng maayos na buhay.",
         "choices": [
             "A. mapula",
             "B. madugo",
@@ -171,7 +171,7 @@
     {
         "id": 14,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "benign acts of charity",
+        "question": "*benign* acts of charity",
         "choices": [
             "A. compassionate",
             "B. sympathy",
@@ -184,7 +184,7 @@
     {
         "id": 15,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "altruistic goals",
+        "question": "*altruistic* goals",
         "choices": [
             "A. selfish",
             "B. unselfish",
@@ -197,7 +197,7 @@
     {
         "id": 16,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "achievements were applauded",
+        "question": "achievements were *applauded*",
         "choices": [
             "A. celebrated",
             "B. reprimanded",
@@ -210,7 +210,7 @@
     {
         "id": 17,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "defiled by his opponents",
+        "question": "*defiled* by his opponents",
         "choices": [
             "A. respected",
             "B. tarnished",
@@ -223,7 +223,7 @@
     {
         "id": 18,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "tugatog ng tagumpay",
+        "question": "*tugatog* ng tagumpay",
         "choices": [
             "A. rurok",
             "B. katuparan",
@@ -236,7 +236,7 @@
     {
         "id": 19,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "mapag-alinlangang puso",
+        "question": "*mapag-alinlangang* puso",
         "choices": [
             "A. nag-aatubili",
             "B. mapagduda",
@@ -249,7 +249,7 @@
     {
         "id": 20,
         "instruction": "Directions. Select from the choices the one which has the opposite meaning of the italicized word.",
-        "question": "walang puwang sa kapatawaran",
+        "question": "*walang puwang* sa kapatawaran",
         "choices": [
             "A. mapagbigay",
             "B. madamot",
@@ -522,7 +522,7 @@
     {
         "id": 41,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "He __went__ (A) into his room, __closed the door__, (B) __opened the window__ (C) and __goes to bed__ (D).",
+        "question": "He <u>went</u> (A) into his room, <u>closed the door</u> (B) <u>opened the window</u> (C) and <u>goes to bed</u> (D).",
         "choices": [
             "A",
             "B",
@@ -530,12 +530,12 @@
             "D"
         ],
         "correct_answer": 3,
-        "explanation": "Let's break down the question and analyze why the correct answer is **C** (the underlined portion in option **C** contains the error).\n\n### **Sentence Analysis:**\nThe sentence is:\n*\"He __went__ (A) into his room, __closed the door__, (B) __opened the window__ (C) and __goes to bed__ (D).\"*\n\n### **Key Observations:**\n1. **Tense Consistency:**\n   - The first verb, **\"went\"** (A), is in the **simple past tense** (*He went into his room*).\n   - The second verb, **\"closed\"** (B), is also in the **simple past tense** (*closed the door*).\n   - The third verb, **\"opened\"** (C), is in the **simple past tense** (*opened the window*).\n   - The **fourth verb, \"goes\" (D)**, is in the **simple present tense** (*goes to bed*).\n\n2. **Error Identification:**\n   - The first three verbs are in the **past tense**, but the last verb (**goes**) is in the **present tense**.\n   - This creates a **tense inconsistency** because all actions should logically happen in the same time frame (past).\n\n### **Why Not the Other Options?**\n- **(A) \"went\"** \u2013 Correctly in past tense.\n- **(B) \"closed\"** \u2013 Correctly in past tense.\n- **(C) \"opened\"** \u2013 Correctly in past tense (no error here).\n- **(D) \"goes\"** \u2013 Incorrect because it should be **\"went\"** (past tense) to match the rest of the sentence.\n\n### **Correction:**\nThe sentence should read:\n*\"He **went** into his room, **closed** the door, **opened** the window, and **went to bed**.\"*\n\n### **Conclusion:**\nThe error is in **(D)**, but the question states the correct answer is **3**, which corresponds to **(C)**. However, based on the analysis, **(D)** is the one with the error.\n\n**Possible Explanation:**\n- There might be a **typographical error** in the question (e.g., the underlining might have been misaligned).\n- Alternatively, if the question intended to ask about **parallel structure** (e.g., *\"went, closed, opened, and **went**\"*), then **(D)** should be the answer.\n- If the question is correctly formatted, then **(D)** is the error, but the answer key says **(C)**.\n\n**Most Likely Correct Answer (Based on Grammar):**\nThe error is in **(D) \"goes\"** (should be **\"went\"**).\n\nIf the answer key says **(C)**, it might be a mistake. However, if the question is testing **verb agreement in sequence**, then **(D)** is the correct choice.\n\nWould you like me to recheck the question formatting? If the underlining was meant to highlight **(D)**, then the answer key might be wrong. Otherwise, the error is in **(D)**."
+        "explanation": "Let's break down the question and analyze why the correct answer is **C** (the underlined portion in option **C** contains the error).\n\n### **Sentence Analysis:**\nThe sentence is:\n*\"He <u>went</u> (A) into his room, <u>closed the door</u> (B) <u>opened the window</u> (C) and <u>goes to bed</u> (D).\"*\n\n### **Key Observations:**\n1. **Tense Consistency:**\n   - The first verb, **\"went\"** (A), is in the **simple past tense** (*He went into his room*).\n   - The second verb, **\"closed\"** (B), is also in the **simple past tense** (*closed the door*).\n   - The third verb, **\"opened\"** (C), is in the **simple past tense** (*opened the window*).\n   - The **fourth verb, \"goes\" (D)**, is in the **simple present tense** (*goes to bed*).\n\n2. **Error Identification:**\n   - The first three verbs are in the **past tense**, but the last verb (**goes**) is in the **present tense**.\n   - This creates a **tense inconsistency** because all actions should logically happen in the same time frame (past).\n\n### **Why Not the Other Options?**\n- **(A) \"went\"** \u2013 Correctly in past tense.\n- **(B) \"closed\"** \u2013 Correctly in past tense.\n- **(C) \"opened\"** \u2013 Correctly in past tense (no error here).\n- **(D) \"goes\"** \u2013 Incorrect because it should be **\"went\"** (past tense) to match the rest of the sentence.\n\n### **Correction:**\nThe sentence should read:\n*\"He **went** into his room, **closed** the door, **opened** the window, and **went to bed**.\"*\n\n### **Conclusion:**\nThe error is in **(D)**, but the question states the correct answer is **3**, which corresponds to **(C)**. However, based on the analysis, **(D)** is the one with the error.\n\n**Possible Explanation:**\n- There might be a **typographical error** in the question (e.g., the underlining might have been misaligned).\n- Alternatively, if the question intended to ask about **parallel structure** (e.g., *\"went, closed, opened, and **went**\"*), then **(D)** should be the answer.\n- If the question is correctly formatted, then **(D)** is the error, but the answer key says **(C)**.\n\n**Most Likely Correct Answer (Based on Grammar):**\nThe error is in **(D) \"goes\"** (should be **\"went\"**).\n\nIf the answer key says **(C)**, it might be a mistake. However, if the question is testing **verb agreement in sequence**, then **(D)** is the correct choice.\n\nWould you like me to recheck the question formatting? If the underlining was meant to highlight **(D)**, then the answer key might be wrong. Otherwise, the error is in **(D)**."
     },
     {
         "id": 42,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "Some of the boys __who__ (A) __plays basketball__ (B) also __like__(C) __to play football.__ (D)",
+        "question": "Some of the boys <u>who</u> (A) <u>plays basketball</u> (B) also <u>like</u> (C) <u>to play football.</u> (D)",
         "choices": [
             "A",
             "B",
@@ -548,7 +548,7 @@
     {
         "id": 43,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "__You__ (A) and __me__ (B) should __make__ (C) a __pact__. (D)",
+        "question": "<u>You</u> (A) and <u>me</u> (B) should <u>make</u> (C) a <u>pact</u>. (D)",
         "choices": [
             "A",
             "B",
@@ -556,12 +556,12 @@
             "D"
         ],
         "correct_answer": 1,
-        "explanation": "In this sentence, the error is in the **underlined portion (B) \"me\"**, which is why the correct answer is **B**.\n\n### **Explanation:**\nThe sentence is:\n**\"__You__ (A) and __me__ (B) should __make__ (C) a __pact__. (D)\"**\n\n#### **Why is \"me\" incorrect here?**\nThe issue is with **subject vs. object pronouns**:\n- **\"You\"** is a **subject pronoun** (used when the noun is the subject of the sentence).\n- **\"Me\"** is an **object pronoun** (used when the noun is the object of a verb or preposition).\n\nIn this sentence, **\"you and me\"** are both **subjects** of the verb **\"should make\"** (the main action). Therefore, the correct form should be **\"you and I\"** (both subject pronouns).\n\n#### **Correct Version:**\n\u2705 **\"You (A) and I (B) should make (C) a pact. (D)\"**\n\n#### **Why not \"me\"?**\n- If the sentence were **\"She gave the book to you and me,\"** then **\"me\"** would be correct because it is the **object** of the preposition **\"to.\"**\n- But in this case, **\"you and me\"** are both performing the action (**\"should make\"**), so **\"I\"** is needed.\n\n### **Summary:**\n- **Subject pronouns** (I, you, he, she, we, they) are used when the noun is the **doer** of the action.\n- **Object pronouns** (me, him, her, us, them) are used when the noun is the **receiver** of the action or follows a preposition.\n\nHere, **\"you and I\"** is correct because both are subjects of the verb **\"make.\"**"
+        "explanation": "In this sentence, the error is in the **underlined portion (B) \"me\"**, which is why the correct answer is **B**.\n\n### **Explanation:**\nThe sentence is:\n**\"<u>You<u> (A) and <u>me<u> (B) should <u>make<u> (C) a <u>pact<u>. (D)\"**\n\n#### **Why is \"me\" incorrect here?**\nThe issue is with **subject vs. object pronouns**:\n- **\"You\"** is a **subject pronoun** (used when the noun is the subject of the sentence).\n- **\"Me\"** is an **object pronoun** (used when the noun is the object of a verb or preposition).\n\nIn this sentence, **\"you and me\"** are both **subjects** of the verb **\"should make\"** (the main action). Therefore, the correct form should be **\"you and I\"** (both subject pronouns).\n\n#### **Correct Version:**\n\u2705 **\"You (A) and I (B) should make (C) a pact. (D)\"**\n\n#### **Why not \"me\"?**\n- If the sentence were **\"She gave the book to you and me,\"** then **\"me\"** would be correct because it is the **object** of the preposition **\"to.\"**\n- But in this case, **\"you and me\"** are both performing the action (**\"should make\"**), so **\"I\"** is needed.\n\n### **Summary:**\n- **Subject pronouns** (I, you, he, she, we, they) are used when the noun is the **doer** of the action.\n- **Object pronouns** (me, him, her, us, them) are used when the noun is the **receiver** of the action or follows a preposition.\n\nHere, **\"you and I\"** is correct because both are subjects of the verb **\"make.\"**"
     },
     {
         "id": 44,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "__When__ (A) you __pass__ (B) the UPCAT, __one__ (C) should be __proud__. (D)",
+        "question": "<u>When</u> (A) you <u>pass</u> (B) the UPCAT, <u>one</u> (C) should be <u>proud</u>. (D)",
         "choices": [
             "A",
             "B",
@@ -574,7 +574,7 @@
     {
         "id": 45,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "Neither Kate __or__ (A) Sarah __likes__ (B) the dessert __prepared__ (C) __by the chef__. (D)",
+        "question": "Neither Kate <u>or</u> (A) Sarah <u>likes</u> (B) the dessert <u>prepared</u> (C) <u>by the chef</u>. (D)",
         "choices": [
             "A",
             "B",
@@ -587,7 +587,7 @@
     {
         "id": 46,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "As dedicated __barrio doctors__ (A) Kenneth __plans__ (B) to become members __of the relief team__ (C) to be sent __to Aurora__ (D).",
+        "question": "As dedicated <u>barrio doctors</u> (A) Kenneth <u>plans</u> (B) to become members <u>of the relief team</u> (C) to be sent <u>to Aurora</u> (D).",
         "choices": [
             "A",
             "B",
@@ -595,12 +595,12 @@
             "D"
         ],
         "correct_answer": 1,
-        "explanation": "Let's break down the question and analyze why the correct answer is **B** (the underlined portion in choice B: *\"plans\"*).\n\n### **Sentence Analysis:**\nThe original sentence is:\n*\"As dedicated __barrio doctors__ (A) Kenneth __plans__ (B) to become members __of the relief team__ (C) to be sent __to Aurora__ (D).\"*\n\n### **Key Issue: Subject-Verb Agreement**\nThe error lies in **choice B (\"plans\")** because the verb does not agree with the subject.\n\n1. **Subject Identification:**\n   - The subject is **\"Kenneth\"** (a singular noun).\n   - The verb **\"plans\"** is also singular, which *seems* correct at first glance.\n\n2. **Problem:**\n   - The phrase **\"As dedicated barrio doctors\"** modifies **\"Kenneth\"**, implying that Kenneth is part of a group (barrio doctors).\n   - However, the sentence structure suggests that **\"Kenneth\"** (singular) is the one making the plans, not the entire group.\n   - The real issue is that **\"plans\"** is **incorrectly placed**\u2014it should be **\"plan\"** (plural) if the subject is the group of doctors, but the sentence structure is awkward.\n\n3. **Grammar Rule:**\n   - The sentence is a **non-finite clause** (a phrase without a subject-verb agreement requirement).\n   - The correct structure should be:\n     *\"As dedicated barrio doctors, Kenneth plans to become a member of the relief team to be sent to Aurora.\"*\n   - The error is that **\"plans\"** is **incorrectly underlined**\u2014the real issue is that the sentence is **unclear and grammatically flawed** due to missing a comma after **\"doctors\"**.\n\n4. **Why \"B\" is the Answer:**\n   - The question asks for the **underlined portion with an error**.\n   - **\"Plans\"** is underlined in **(B)**, but the actual error is **structural** (missing a comma and awkward phrasing).\n   - However, since the question expects a choice, **\"B\"** is marked as the answer, likely because **\"plans\"** is the only underlined verb, and the sentence implies a plural subject (the doctors) rather than Kenneth alone.\n\n### **Corrected Sentence:**\n*\"As dedicated barrio doctors, Kenneth plans to become a member of the relief team to be sent to Aurora.\"*\n*(Note: If Kenneth is acting alone, the sentence should be: \"Kenneth, a dedicated barrio doctor, plans to...\")*\n\n### **Conclusion:**\nThe error is in **(B)** because the verb **\"plans\"** does not properly align with the intended meaning (the group of doctors, not just Kenneth). The sentence structure is also incorrect without a comma after **\"doctors\"**, but since the question only asks about the underlined portion, **(B)** is the best answer.\n\nWould you like further clarification on any part?"
+        "explanation": "Let's break down the question and analyze why the correct answer is **B** (the underlined portion in choice B: *\"plans\"*).\n\n### **Sentence Analysis:**\nThe original sentence is:\n*\"As dedicated <u>barrio doctors</u> (A) Kenneth <u>plans</u> (B) to become members <u>of the relief team</u> (C) to be sent <u>to Aurora</u> (D).\"*\n\n### **Key Issue: Subject-Verb Agreement**\nThe error lies in **choice B (\"plans\")** because the verb does not agree with the subject.\n\n1. **Subject Identification:**\n   - The subject is **\"Kenneth\"** (a singular noun).\n   - The verb **\"plans\"** is also singular, which *seems* correct at first glance.\n\n2. **Problem:**\n   - The phrase **\"As dedicated barrio doctors\"** modifies **\"Kenneth\"**, implying that Kenneth is part of a group (barrio doctors).\n   - However, the sentence structure suggests that **\"Kenneth\"** (singular) is the one making the plans, not the entire group.\n   - The real issue is that **\"plans\"** is **incorrectly placed**\u2014it should be **\"plan\"** (plural) if the subject is the group of doctors, but the sentence structure is awkward.\n\n3. **Grammar Rule:**\n   - The sentence is a **non-finite clause** (a phrase without a subject-verb agreement requirement).\n   - The correct structure should be:\n     *\"As dedicated barrio doctors, Kenneth plans to become a member of the relief team to be sent to Aurora.\"*\n   - The error is that **\"plans\"** is **incorrectly underlined**\u2014the real issue is that the sentence is **unclear and grammatically flawed** due to missing a comma after **\"doctors\"**.\n\n4. **Why \"B\" is the Answer:**\n   - The question asks for the **underlined portion with an error**.\n   - **\"Plans\"** is underlined in **(B)**, but the actual error is **structural** (missing a comma and awkward phrasing).\n   - However, since the question expects a choice, **\"B\"** is marked as the answer, likely because **\"plans\"** is the only underlined verb, and the sentence implies a plural subject (the doctors) rather than Kenneth alone.\n\n### **Corrected Sentence:**\n*\"As dedicated barrio doctors, Kenneth plans to become a member of the relief team to be sent to Aurora.\"*\n*(Note: If Kenneth is acting alone, the sentence should be: \"Kenneth, a dedicated barrio doctor, plans to...\")*\n\n### **Conclusion:**\nThe error is in **(B)** because the verb **\"plans\"** does not properly align with the intended meaning (the group of doctors, not just Kenneth). The sentence structure is also incorrect without a comma after **\"doctors\"**, but since the question only asks about the underlined portion, **(B)** is the best answer.\n\nWould you like further clarification on any part?"
     },
     {
         "id": 47,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "Ilagay mo __ng__ (A) maayos ang lumang pigurin __sa__ (B) __ibabaw__ (C) ng __malaking  eskaparate__(D).",
+        "question": "Ilagay mo <u>ng</u> (A) maayos ang lumang pigurin <u>sa</u> (B) <u>ibabaw</u> (C) ng <u>malaking  eskaparate</u> (D).",
         "choices": [
             "A",
             "B",
@@ -608,12 +608,12 @@
             "D"
         ],
         "correct_answer": 0,
-        "explanation": "In this question, the correct answer is **\"A\"** (though the given correct answer is marked as **0**, which likely corresponds to **A** in the choices). Here's why:\n\n### **Sentence Breakdown:**\nThe sentence is:\n*\"Ilagay mo __ng__ (A) maayos ang lumang pigurin __sa__ (B) __ibabaw__ (C) ng __malaking eskaparate__(D).\"*\n\n### **Meaning:**\nThe sentence means:\n*\"Place the old mirror (properly) **on top of** the large display case.\"*\n\n### **Error Analysis:**\n1. **\"ng\" (A)** \u2013 The word **\"ng\"** is a grammatical particle used to indicate possession, origin, or other relationships. However, in this context, it is incorrectly used before **\"maayos\"** (properly).\n   - The correct phrase should be **\"maayos\"** (adverb) modifying **\"ilagay\"** (place), but **\"ng\"** is unnecessary here.\n   - The correct sentence should be:\n     *\"Ilagay mo **maayos** ang lumang pigurin **sa ibabaw** ng malaking eskaparate.\"*\n     (Place the old mirror **properly** **on top of** the large display case.)\n\n2. **\"sa\" (B)** \u2013 This is correct. **\"Sa\"** is the proper preposition for \"on top of\" in this context.\n3. **\"ibabaw\" (C)** \u2013 This is correct. It means \"top\" or \"surface.\"\n4. **\"malaking eskaparate\" (D)** \u2013 This is correct. It means \"large display case.\"\n\n### **Why \"ng\" (A) is wrong?**\n- **\"Ng\"** is used for possession (e.g., *\"ng bahay\"* = \"of the house\") or to connect nouns (e.g., *\"ng tao\"* = \"of a person\").\n- Here, **\"maayos\"** is an adverb modifying the verb **\"ilagay\"**, so **\"ng\"** is unnecessary and incorrect.\n\n### **Corrected Sentence:**\n*\"Ilagay mo **maayos** ang lumang pigurin **sa ibabaw** ng malaking eskaparate.\"*\n\n### **Conclusion:**\nThe error is in **(A) ng**, which should not be there. The correct answer is **A**.\n\n*(Note: The given correct answer is marked as **0**, which likely corresponds to **A** in the choices.)*"
+        "explanation": "In this question, the correct answer is **\"A\"** (though the given correct answer is marked as **0**, which likely corresponds to **A** in the choices). Here's why:\n\n### **Sentence Breakdown:**\nThe sentence is:\n*\"Ilagay mo <u>ng<u> (A) maayos ang lumang pigurin <u>sa<u> (B) <u>ibabaw<u> (C) ng <u>malaking eskaparate<u>(D).\"*\n\n### **Meaning:**\nThe sentence means:\n*\"Place the old mirror (properly) **on top of** the large display case.\"*\n\n### **Error Analysis:**\n1. **\"ng\" (A)** \u2013 The word **\"ng\"** is a grammatical particle used to indicate possession, origin, or other relationships. However, in this context, it is incorrectly used before **\"maayos\"** (properly).\n   - The correct phrase should be **\"maayos\"** (adverb) modifying **\"ilagay\"** (place), but **\"ng\"** is unnecessary here.\n   - The correct sentence should be:\n     *\"Ilagay mo **maayos** ang lumang pigurin **sa ibabaw** ng malaking eskaparate.\"*\n     (Place the old mirror **properly** **on top of** the large display case.)\n\n2. **\"sa\" (B)** \u2013 This is correct. **\"Sa\"** is the proper preposition for \"on top of\" in this context.\n3. **\"ibabaw\" (C)** \u2013 This is correct. It means \"top\" or \"surface.\"\n4. **\"malaking eskaparate\" (D)** \u2013 This is correct. It means \"large display case.\"\n\n### **Why \"ng\" (A) is wrong?**\n- **\"Ng\"** is used for possession (e.g., *\"ng bahay\"* = \"of the house\") or to connect nouns (e.g., *\"ng tao\"* = \"of a person\").\n- Here, **\"maayos\"** is an adverb modifying the verb **\"ilagay\"**, so **\"ng\"** is unnecessary and incorrect.\n\n### **Corrected Sentence:**\n*\"Ilagay mo **maayos** ang lumang pigurin **sa ibabaw** ng malaking eskaparate.\"*\n\n### **Conclusion:**\nThe error is in **(A) ng**, which should not be there. The correct answer is **A**.\n\n*(Note: The given correct answer is marked as **0**, which likely corresponds to **A** in the choices.)*"
     },
     {
         "id": 48,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "__Natatakpan__ (A) ng kadiliman ang __iba't-ibang__ (B) __makukulay__(C) __na__ (D) larawan .",
+        "question": "<u>Natatakpan</u> (A) ng kadiliman ang <u>iba't-ibang</u> (B) <u>makukulay</u> (C) <u>na</u> (D) larawan .",
         "choices": [
             "A",
             "B",
@@ -626,7 +626,7 @@
     {
         "id": 49,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "__Napagalaman__ (A) na __nakipagsabwatan__ (B) siya sa kanyang tauhan __upang__ (C) maikubli ang katiwaliang __kanyang ginawa__ (D).",
+        "question": "<u>Napagalaman</u> (A) na <u>nakipagsabwatan</u> (B) siya sa kanyang tauhan <u>upang</u> (C) maikubli ang katiwaliang <u>kanyang ginawa</u> (D).",
         "choices": [
             "A",
             "B",
@@ -639,7 +639,7 @@
     {
         "id": 50,
         "instruction": "Identifying Errors. Choose the letter of the underlined portion that contains an error.",
-        "question": "__Magpahinga ka__ (A) na __at__(B) __pahiran mo__(C) ang pawis na __nasa iyong batok__ (D).",
+        "question": "<u>Magpahinga ka</u> (A) na <u>at</u> (B) <u>pahiran mo</u> (C) ang pawis na <u>nasa iyong batok</u> (D).",
         "choices": [
             "A",
             "B",
@@ -647,7 +647,7 @@
             "D"
         ],
         "correct_answer": 2,
-        "explanation": "In this question, the correct answer is **B** (the second underlined portion: **\"__at__\"**).\n\n### **Explanation:**\nThe sentence is:\n**\"__Magpahinga ka__ (A) na __at__(B) __pahiran mo__(C) ang pawis na __nasa iyong batok__ (D).\"**\n\nThe error is in **Choice B (\"at\")** because the correct word should be **\"at\"** (meaning \"and\" or \"but\") is not the appropriate conjunction here. Instead, the correct word should be **\"at\"** (meaning \"so that\" or \"in order to\") is not the issue\u2014rather, the problem is that **\"at\"** is being used incorrectly in this context.\n\nHowever, the real error is that **\"at\"** is being used as a conjunction when it should be **\"at\"** (meaning \"so that\" or \"in order to\") is not the issue\u2014rather, the correct word should be **\"at\"** (meaning \"and\" or \"but\") is not the appropriate conjunction here.\n\nActually, the correct word should be **\"at\"** (meaning \"so that\" or \"in order to\") is not the issue\u2014rather, the error is that **\"at\"** is being used incorrectly in this context.\n\n### **Correction:**\nThe correct sentence should be:\n**\"Magpahinga ka na **pahiran mo** ang pawis na nasa iyong batok.\"**\n*(Rest you so that you can wipe the sweat on your forehead.)*\n\nThe word **\"at\"** (Choice B) is incorrect because it does not fit grammatically. The correct conjunction here is **\"na\"** (which means \"so that\" or \"in order to\") is not the issue\u2014rather, the error is that **\"at\"** is being used incorrectly in this context.\n\n### **Why is \"at\" wrong?**\n- **\"At\"** is used for listing things (e.g., *\"gumawa ako ng pagkain at inumin\"*).\n- In this sentence, **\"na\"** (meaning \"so that\") is the correct conjunction to express purpose.\n\n### **Final Answer:**\nThe error is in **Choice B (\"at\")** because it should be **\"na\"** (meaning \"so that\" or \"in order to\") to make the sentence grammatically correct.\n\n*(Note: The original answer key says \"2\" (Choice B), which is correct because \"at\" is the incorrect word.)*"
+        "explanation": "In this question, the correct answer is **B** (the second underlined portion: **\"<u>at</u>\"**).\n\n### **Explanation:**\nThe sentence is:\n**\"<u>Magpahinga ka</u> (A) na <u>at</u>(B) <u>pahiran mo</u>(C) ang pawis na <u>nasa iyong batok</u> (D).\"**\n\nThe error is in **Choice B (\"at\")** because the correct word should be **\"at\"** (meaning \"and\" or \"but\") is not the appropriate conjunction here. Instead, the correct word should be **\"at\"** (meaning \"so that\" or \"in order to\") is not the issue\u2014rather, the problem is that **\"at\"** is being used incorrectly in this context.\n\nHowever, the real error is that **\"at\"** is being used as a conjunction when it should be **\"at\"** (meaning \"so that\" or \"in order to\") is not the issue\u2014rather, the correct word should be **\"at\"** (meaning \"and\" or \"but\") is not the appropriate conjunction here.\n\nActually, the correct word should be **\"at\"** (meaning \"so that\" or \"in order to\") is not the issue\u2014rather, the error is that **\"at\"** is being used incorrectly in this context.\n\n### **Correction:**\nThe correct sentence should be:\n**\"Magpahinga ka na **pahiran mo** ang pawis na nasa iyong batok.\"**\n*(Rest you so that you can wipe the sweat on your forehead.)*\n\nThe word **\"at\"** (Choice B) is incorrect because it does not fit grammatically. The correct conjunction here is **\"na\"** (which means \"so that\" or \"in order to\") is not the issue\u2014rather, the error is that **\"at\"** is being used incorrectly in this context.\n\n### **Why is \"at\" wrong?**\n- **\"At\"** is used for listing things (e.g., *\"gumawa ako ng pagkain at inumin\"*).\n- In this sentence, **\"na\"** (meaning \"so that\") is the correct conjunction to express purpose.\n\n### **Final Answer:**\nThe error is in **Choice B (\"at\")** because it should be **\"na\"** (meaning \"so that\" or \"in order to\") to make the sentence grammatically correct.\n\n*(Note: The original answer key says \"2\" (Choice B), which is correct because \"at\" is the incorrect word.)*"
     },
     {
         "id": 51,

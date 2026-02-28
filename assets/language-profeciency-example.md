@@ -74,7 +74,7 @@ Directions. Each of the sentences below contains an underlined word or phrase. F
 
 **Direksyon**. Piliin ang katulad na kahulugan ng salitang nakasalungguhit.
 
-- 11. Ang alab ng puso ko ay ipaglaban ka.
+- 11. Ang <u>alab ng puso</u> ko ay ipaglaban ka.
   - A. pighati
   - B. sakit
   - C. damdamin
@@ -182,7 +182,7 @@ Sentence Completion. Select the word or phrase that most appropriately completes
 - C. pieces of
 - D. many
 
-| 29. The music    | of the ceremony                            |
+|   . The music    | of the ceremony                            |
 |------------------|--------------------------------------------|
 | should therefor  | re be expressions w <mark>hich</mark>      |
 | glorify the Lord | l rather than just the <mark>brid</mark> e |
