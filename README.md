@@ -16,7 +16,6 @@ This tool is made specifically for Philippine Colleges (e.g. UP, UST, DLSU) Admi
 7. Enjoy studying!
 
 
-
 ## Contribute (for students)
 
 The project is run on formatted reviewers that make it possible for AI Generation to create a mock test for you.
