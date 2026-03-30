@@ -1,9 +1,10 @@
-# Code from www.datalab.to to process the pdf to markdown using their API
-
-import requests, time,dotenv, json, explanations
+import requests, time, json
 from tkinter import Tk, filedialog
-key=dotenv.get_key(".env", "DATALABS_API_KEY")
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+key = os.getenv("DATALABS_API_KEY")
 
 url = "https://www.datalab.to/api/v1/convert"
 headers = {"X-Api-Key": key}
@@ -11,31 +12,46 @@ headers = {"X-Api-Key": key}
 def get_file_from_user():
     root = Tk()
     root.withdraw()
+    # Bring the window to the front
+    root.attributes('-topmost', True) 
     file_path = filedialog.askopenfilename(filetypes=[("PDF files", "*.pdf")])
+    root.destroy() # Properly close the tkinter instance
     if not file_path:
-        raise ValueError("User must select a file")
-    return file_path
+        return None
+    return os.path.abspath(file_path) # Use absolute path
 
-file = get_file_from_user()
+file_path = get_file_from_user()
 
-with open(file, "rb") as f:
-    resp = requests.post(
-        url,
-        files={"file": (file, f, "application/pdf")},
-        headers=headers,
-    )
+if file_path:
+    with open(file_path, "rb") as f:
+        resp = requests.post(
+            url,
+            files={"file": (os.path.basename(file_path), f, "application/pdf")},
+            headers=headers,
+        )
 
-print (json.dumps(resp.json(), indent=4))
+    data = resp.json()
+    print(json.dumps(data, indent=4))
 
-check_url = resp.json()["request_check_url"]
+    if "request_check_url" in data:
+        check_url = data["request_check_url"]
 
-# Poll until complete
-for _ in range(300):
-    r = requests.get(check_url, headers=headers).json()
-    if r["status"] == "complete":
-        break
-    time.sleep(2)
-with open(f"{file.split('.')[0]}.md", "w") as f:
-    f.write(r["markdown"])
-with open(f"{file.split('.')[0]}.json", "w") as f:
-    f.write(json.dumps(r))
+        # Poll until complete
+        for _ in range(300):
+            r = requests.get(check_url, headers=headers).json()
+            if r.get("status") == "complete":
+                # Create output paths based on the original file location
+                base_path = os.path.splitext(file_path)[0]
+                
+                with open(f"{base_path}.md", "w", encoding="utf-8") as f:
+                    f.write(r.get("markdown", ""))
+                
+                with open(f"{base_path}.json", "w", encoding="utf-8") as f:
+                    f.write(json.dumps(r, indent=4))
+                
+                print(f"Success! Files saved to {base_path}")
+                break
+            print("Processing...")
+            time.sleep(2)
+    else:
+        print("Error: No check URL returned from API.")
