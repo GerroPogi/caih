@@ -16,7 +16,7 @@ unanswered_questions={}
 wrong_questions={}
 
 # flatten exam
-flattened_exam = [question for instruction in st.session_state.exam.values() for question in instruction]
+flattened_exam = [question for instruction in st.session_state.exam for question in instruction]
 total_questions = len(flattened_exam)
 CORRECT = 1
 print("score ",score)

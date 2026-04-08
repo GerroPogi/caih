@@ -8,42 +8,15 @@ st.title("Exam Page")
 def get_exam():
     print(st.session_state.data.fetch_exam)
     exam = st.session_state.data.fetch_exam(st.session_state.question_amount,st.session_state.subject)
-    sorted= {question["instruction"]:[] for question in exam} # Sorts by instruction of every item
-    
-    for question in exam:
-        sorted[question["instruction"]].append(question)
-    return sorted
-
-# st.markdown("<style>button[kind='right'] { background-color: #30b31e; }</style>", unsafe_allow_html=True)
-# st.markdown("<style>button[kind='wrong'] { background-color: #872b2b; }</style>", unsafe_allow_html=True)
-# st.markdown("<style>button[kind='none'] { background-color: #8a877f; }</style>", unsafe_allow_html=True)
-# button2_clicked = st.button("Button 2",type="primary")
-# st.markdown(
-#     """
-#     <style>
-#     .right {
-#         background-color: #30b31e;
-#     }
-#     .wrong {
-#         background-color: #872b2b;
-#     }
-#     .none {
-#         background-color: #8a877f;
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True,
-# )
-
-# st.markdown('<span id="right"></span>', unsafe_allow_html=True)
-# st.button("My Button")
-
+    return exam
 
 
 exam=get_exam()
 st.session_state.exam=exam
-# print(json.dumps(exam,indent=4)) # Only use for debugging 
+print(json.dumps(exam,indent=4)) # Only use for debugging 
 # print(st.session_state.question_type,len(exam))
+
+current_page_type = exam[min(st.session_state.question_type,len(exam)-1)]
 
 
 def clean_choice(choice): # Brute force method to clean out choice in case when the AI adds extra text.
@@ -55,11 +28,11 @@ CORRECT = 1
 WRONG = 2
 DISABLED = 3
 def render_questions():
-    exam_dict_key =list(exam.keys())[st.session_state.question_type] # Grabs the instructions
+    exam_dict_key =exam[st.session_state.question_type]["instruction"] # Grabs the instructions
     st.write(exam_dict_key)
-    for question in exam[exam_dict_key]:
+    for question in exam[st.session_state.question_type]["questions"]:
         st.markdown(f"{question['id']}.  {question['question']}", unsafe_allow_html=True)
-        def on_choice_click(button_choice,num):
+        def on_choice_click(button_choice,num:int ):
             print(button_choice,num)
             for disable_choice in "abcd":
                 choice_name=f"button_{num}{disable_choice[0].lower()}_value"
@@ -69,7 +42,7 @@ def render_questions():
             print(button_choice)
             st.session_state.choices[num]=button_choice[0].lower() # Store the user's choice for later reference in explanations page            
             correct_answer=0
-            for question in exam[exam_dict_key]:
+            for question in current_page_type["questions"]:
                 if question["id"]==num:
                     correct_answer=question["correct_answer"] 
             
@@ -81,7 +54,7 @@ def render_questions():
                 print("Wrong.")
                 st.session_state.score[str(num)]=WRONG
                 st.session_state[selected_button_key] = WRONG
-            print(question["correct_answer"],num)
+            print("correct answer: ","abcd"[current_page_type["questions"][int(num)-1]["correct_answer"]],num)
 
             # print(f"Selected button: {selected_button}")  # Print the selected_button)
             

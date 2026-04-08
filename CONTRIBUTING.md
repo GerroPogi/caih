@@ -13,15 +13,19 @@ You need to install **2 applications in your system.**
 First [Python](https://www.python.org/downloads/) (3.12 or higher) and [Ollama](https://ollama.com/). The guides on how to install it are in their respective links.
 
 ### Datalabs
+
 Create an account in [datalabs.to](https://www.datalab.to) (Platform where you're going to convert PDF to Markdown, a simplified text).
 
 ### Project setup
+
 Download the source code by clicking: `Code > Download Zip` or `git clone https://github.com/gerro-abarabar/caih.git` in your terminal.
 
 #### Mac and Linux
+
 Setup your Python environment by running `python -m venv .venv` and **activate** it by doing `source .venv/bin/activate` (`source .venv/bin/activate` for Mac and Linux)
 
 #### Use Datalabs API Key
+
 Rename the `.env.example` to `.env` and change the API Key from [datalabs.to](https://www.datalab.to). You can find it by going `Convert > API Key > Copy`
 
 #### Install Libraries and Models
@@ -29,6 +33,7 @@ Rename the `.env.example` to `.env` and change the API Key from [datalabs.to](ht
 Install the required libraries by doing `pip install -r requirements.txt` or `pip3 install -r requirements.txt` if you're in Mac or Linux.
 
 Install the notable language models by doing the commands:
+
 - `ollama pull deepseek-v3.2:cloud`
 - `ollama pull qwen3.5:397b-cloud`
 - `ollama pull ministral-3:14b-cloud`
@@ -43,7 +48,7 @@ As of the moment the **reviewers must not be heavilly depended on images**, beca
 
 Do the command `python data_processing/datalabs.py` (`python3 data_processing/datalabs.py` for Mac and Linux) in your terminal, and pick the reviewer you chose.
 
-Your files will be saved in the same directory of your reviewer. A `.json` and a `.md` can be found there. 
+Your files will be saved in the same directory of your reviewer. A `.json` and a `.md` can be found there.
 
 ## Check your Markdown
 
@@ -52,7 +57,7 @@ It's important to check your Markdown if it is correctly converted. Here are you
 1. The questions make sense
 2. The options are all present
 3. The instructions are there
-4. There are no images *(reviewers must not be heavilly depended on images)*
+4. There are no images _(reviewers must not be heavilly depended on images)_
 5. There are no unnecessary information (e.g. introduction, website links)
 
 After checking that your markdown looks good, proceed with the next step.
@@ -73,10 +78,14 @@ Format every question of this exam, written in markdown, into json like this:
         "C. choice c",
         "D. choice d"
     ],
+    "images": ["image 1". "image 2"],
+    "image_description": ["description for image 1", "description for image 2"],
     "correct_answer": correct answer index (like for b, it's 1),
-} 
+}
 
 Don't remove the latex written it it.
+
+If the information for a question needs images, include the image link in the text, whether by instructions, choices, or question. Then add the image link to "images" to be processed later. The image will surely have a description which you will put in "image_description" respectively.
 
 Markdown exam:
 <Markdown>
@@ -84,14 +93,13 @@ Markdown exam:
 
 Put the output from DeepSeek into a file, name it whatever you want, but let the file extension be `.json`
 
-
     As of the moment, there is no quicker way to convert to JSON
 
 ## Add explanations
+
 Go back to the project and do `python data_processing/explanations.py` (`python3 data_processing/explanations.py` for Linux and Mac)
 
-Pick your `.json` file and let it run until it's finished. 
-
+Pick your `.json` file and let it run until it's finished.
 
 ## Submit your file and support the project
 
@@ -103,10 +111,11 @@ Wait for your reviewer to be accepted into the project.
 
 Refer to the video to do it:
 <video src="assets/add_reviewer.mp4" controls="controls" style="max-width: 100%;">
-  Your browser does not support the video tag.
+Your browser does not support the video tag.
 </video>
 
 ## TL;DR
+
 1. **Convert:** PDF ➔ Markdown (using Datalabs)
 2. **Clean:** Remove images and weird text.
 3. **Format:** Markdown ➔ JSON (using DeepSeek)
