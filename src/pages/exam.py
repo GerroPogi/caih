@@ -4,6 +4,8 @@ import streamlit as st
 
 st.title("Exam Page")
 
+def get_data(model,key): pass
+
 @st.cache_data
 def get_exam():
     print(st.session_state.data.fetch_exam)
@@ -13,67 +15,57 @@ def get_exam():
 
 exam=get_exam()
 st.session_state.exam=exam
-print(json.dumps(exam,indent=4)) # Only use for debugging 
+# print(exam,"exam") # Only use for debugging 
 # print(st.session_state.question_type,len(exam))
 
-current_page_type = exam[min(st.session_state.question_type,len(exam)-1)]
-
-
-def clean_choice(choice): # Brute force method to clean out choice in case when the AI adds extra text.
-    while not choice[0].lower() in "abcd":
-        choice=choice[1:]
-    return choice
+current_page_type = exam.types[min(st.session_state.question_type,len(exam.types)-1)]
+# print(current_page_type)
 
 CORRECT = 1
 WRONG = 2
 DISABLED = 3
 def render_questions():
-    exam_dict_key =exam[st.session_state.question_type]["instruction"] # Grabs the instructions
+    exam_dict_key =current_page_type.instruction # Grabs the instructions
     st.write(exam_dict_key)
-    for question in exam[st.session_state.question_type]["questions"]:
-        st.markdown(f"{question['id']}.  {question['question']}", unsafe_allow_html=True)
-        def on_choice_click(button_choice,num:int ):
-            print(button_choice,num)
-            for disable_choice in "abcd":
-                choice_name=f"button_{num}{disable_choice[0].lower()}_value"
-                st.session_state[choice_name] = DISABLED
-            button_choice = clean_choice(button_choice)
-            selected_button_key=f"button_{num}{button_choice[0].lower()}_value"
-            print(button_choice)
-            st.session_state.choices[num]=button_choice[0].lower() # Store the user's choice for later reference in explanations page            
-            correct_answer=0
-            for question in current_page_type["questions"]:
-                if question["id"]==num:
-                    correct_answer=question["correct_answer"] 
+    for question in current_page_type.questions:
+        st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True)
+        def on_choice_click(choice, question):
+            correct_answer = question.correct_answer
             
-            if button_choice[0].lower() == "abcd"[correct_answer]:
-                print("Correct!")
-                st.session_state.score[str(num)]=CORRECT
-                st.session_state[selected_button_key] = CORRECT
+            for disable_choice in question.choices:
+                st.session_state[f"button_{question.id}{disable_choice.id.lower()}_value"] = DISABLED
+            print(choice, "choice")
+            if choice.id == correct_answer:
+                st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = CORRECT
+                
             else:
-                print("Wrong.")
-                st.session_state.score[str(num)]=WRONG
-                st.session_state[selected_button_key] = WRONG
-            print("correct answer: ","abcd"[current_page_type["questions"][int(num)-1]["correct_answer"]],num)
-
+                st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = WRONG
+            
+            if st.session_state.choices.get(str(st.session_state.question_type)) is None:
+                st.session_state.choices[str(st.session_state.question_type)] = [] # Initialize saving choices
+            
+            
+            st.session_state.choices[str(st.session_state.question_type)].append((question, choice)) # Saves answer
+            print(st.session_state[f"button_{question.id}{choice.id.lower()}_value"], "this is the value", correct_answer, "this is the correct answer")
+            
             # print(f"Selected button: {selected_button}")  # Print the selected_button)
             
         
         
-        for i, choice in enumerate(question["choices"]):
-            choice=clean_choice(choice)
-            st.session_state[f"button_{question['id']}{choice[0].lower()}_value"] = st.session_state.get(f"button_{question['id']}{choice[0].lower()}_value", 0) # Initialize state for each button
+        for i, choice in enumerate(question.choices):
+            # print(choice,"choice")
+            st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = st.session_state.get(f"button_{question.id}{choice.id.lower()}_value", 0) # Initialize state for each button
             # print(f"Initialized button_{question['id']}{choice[0].lower()}_value to {st.session_state[f'button_{question['id']}{choice[0].lower()}_value']}")
-            value = st.session_state[f"button_{question['id']}{choice[0].lower()}_value"] 
+            value = st.session_state[f"button_{question.id}{choice.id.lower()}_value"] 
             st.button(
-                choice, 
+                f"{choice.id}. {choice.choice}", 
                 on_click=on_choice_click, 
-                key=f"button_{question['id']}{"abcd"[i]}", 
-                args=(choice,question["id"]), # TODO: fix the problem with correct answers being because it is only considering the last question
+                key=f"button_{question.id}{choice.id.lower()}", 
+                args=(choice, question), # TODO: fix the problem with correct answers being because it is only considering the last question
                 disabled=value!=0, # Default value is 0, if the value changes (the user changed it, refer to on_choice_click) then it will disable.
                 )
 
-if st.session_state.question_type < len(exam):
+if st.session_state.question_type < len(exam.types):
     render_questions()
         
 
@@ -88,7 +80,7 @@ def go_back():
     if st.session_state.question_type > 0:
         st.session_state.question_type -= 1
 
-if st.session_state.question_type < len(exam):
+if st.session_state.question_type < len(exam.types):
     # Create a layout for buttons
     col1, col2 = st.columns(2)
 
@@ -98,7 +90,7 @@ if st.session_state.question_type < len(exam):
 
     with col2:
         # Check if we are on the very last category/page
-        if st.session_state.question_type < len(exam) - 1:
+        if st.session_state.question_type < len(exam.types) - 1:
             st.button("Next", on_click=next_page)
         else:
             # This only shows on the absolute last page
@@ -108,7 +100,7 @@ if st.session_state.question_type < len(exam):
 
 # --- SCORE DISPLAY ---
 # This part handles the "Exam Completed" state
-if st.session_state.question_type >= len(exam):
+if st.session_state.question_type >= len(exam.types):
     st.switch_page("pages/explanations.py")
     
 # INVISIBLE DATA

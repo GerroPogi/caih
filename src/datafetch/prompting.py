@@ -35,7 +35,6 @@ def get_exam_from_ai(questions, subject):
     example_json = []
     image_list = [] # used for giving the AI the image
     formatted_images={} # Used to retrieve the image by assigning names
-    print(cuts)
     for cut in cuts:
         exam_json=load_exam(subject=subject)
         start_number = randint(0, len(exam_json)-cut-1)
@@ -43,15 +42,14 @@ def get_exam_from_ai(questions, subject):
         if any("images" in question for question in exam): # Imports the image if it exists and removes it to save space
             for question in exam:
                 if question.get("images",[]):
-                    print(question)
                     images:dict =question.get("images")
                     question["images"] = images.keys()
                     image_list.extend(images)
-                    for image_name, image in zip(images,question.get(image)):
+                    for image_name, image in zip(images,question.get("images")):
                         formatted_images[image_name]=image
         example_json.extend(exam)
     # We only need a slice for context
-    
+    print(example_json)
 
     messages = [
         {
@@ -68,50 +66,35 @@ def get_exam_from_ai(questions, subject):
             'content': (
                 f"Generate an 'Exam' object containing {questions} new questions. "
                 f"\n\n### SCHEMA CONSTRAINTS:\n{Exam.model_json_schema()}"
-                f"\n\n### REFERENCE EXAMPLE:\n{json.dumps(example_json)}"
+                f"\n\n### REFERENCE EXAMPLE:\n{json.dumps(example_json)}" # FIXME: Problem with Json things
                 "\n\n### STRICT RULES:"
                 "\n1. The 'id' must start at 1 and increment sequentially."
-                "\n2. 'correct_answer' must be an integer between 0 and 3."
+                "\n2. 'correct_answer' must be the choice id of the correc answer."
                 "\n3. Map descriptions to the provided images accurately."
                 "\n4. Return ONLY the raw JSON."
             ),
             "images": image_list  # Ensure your Ollama client supports the 'images' key here
         },
     ] # Thanks Gemini.
-
-    # Using Gemini 3 Flash for high reliability
-    response = client.chat(
-        'gemini-3-flash-preview:latest', 
-        messages=messages, 
-        stream=False,
-        format=Exam.model_json_schema(),
-        )
-    raw_content = response.message.content 
-    
-    while True:
+    while True: # Infinite Loop in case AI make mistakes
+        final_exam = None
+        # Using Gemini 3 Flash for high reliability
         try:
-            # 1. Strip Markdown code blocks if the model included them
-            clean_content = re.sub(r'```json|```', '', raw_content).strip()
-            
-            # 2. Extract the array using a non-greedy match to avoid "extra data" errors
-            match = re.search(r'\[.*\]', clean_content, re.DOTALL)
-            
-            if match:
-                json_str = match.group(0)
-                
-                # 3. Clean common invisible character culprits
-                json_str = json_str.replace('\xa0', ' ')  # Non-breaking spaces
-                json_str = json_str.replace('\t', ' ')    # Literal tabs
-                
-                return json.loads(json_str)
-            else:
-                raise ValueError("No JSON array found in the response.")
-                
-        except json.JSONDecodeError as e:
-            print(f"CRITICAL: JSON Decode Failed at character {e.pos}")
-            print(f"Context: {raw_content[max(0, e.pos-40):e.pos+40]}")
-            print("redoing everything...")
-            raise e
+            response = client.chat(
+                'gemini-3-flash-preview:latest', 
+                messages=messages, 
+                stream=False,
+                format=Exam.model_json_schema(),
+                )
+            raw_content = response.message.content
+            final_exam = Exam.model_validate_json(raw_content)
+        except Exception as e:
+            print(f"Error: {e}. Retrying...")
+            final_exam = None
+        if final_exam:
+            break
+    
+    return final_exam
 
 def explain_exam(exam): # Deprecated for now
     client = Client()

@@ -2,49 +2,57 @@ import json
 
 import streamlit as st
 
+
+def print_exam(exam:list):
+    pass
+
 st.title("Explanations")
 
 st.write("# Completed Exam")
 
-# Score
-score = st.session_state.score
 
-choices = st.session_state.choices
+CHOICES = st.session_state.choices
 
-final_score=0
-unanswered_questions={}
-wrong_questions={}
+score=0
+correct_questions=[]
+unanswered_questions=[]
+wrong_questions=[]
 
-# flatten exam
-flattened_exam = [question for instruction in st.session_state.exam for question in instruction]
-total_questions = len(flattened_exam)
+EXAM=st.session_state.exam
+
+total_questions = sum(len(page.questions) for page in EXAM.types)
+
 CORRECT = 1
-print("score ",score)
-for num, result in score.items():
-    num=int(num)
-    print(num)
-    if result == CORRECT: # Correct answer
-        final_score += 1
-    else:
-        if result == 0: # No answer
-            unanswered_questions[num]=flattened_exam[num-1]
-        else: # Wrong answer
-            wrong_questions[num]=flattened_exam[num-1]
-st.write(f"Your final score is {final_score}/{total_questions}.")
+UNANSWERED = 0
+WRONG = 2
 
-question_type = st.radio("Select question type to review:", ("All", "Wrong", "Unanswered"))
 
-if question_type == "All":
-    questions_to_review = zip(range(1, total_questions + 1), flattened_exam)
-elif question_type == "Wrong":
-    questions_to_review = wrong_questions.items()
-elif question_type == "Unanswered":
-    questions_to_review = unanswered_questions.items()
-print("choices",choices)
-for num, question in questions_to_review:
-    print(num)
-    # print(question)
-    st.markdown(f"### Question {num}: {question['question']}", unsafe_allow_html=True)
-    st.markdown(f"**Your answer:** {question['choices']["abcd".index(choices[num])]}", unsafe_allow_html=True)
-    st.markdown(f"**Correct answer:** {question['choices'][question['correct_answer']]}", unsafe_allow_html=True)
-    st.markdown(f"**Explanation:** \n{question['explanation']}", unsafe_allow_html=True)
+
+score_type=st.toggle('Use "Right minus wrong"' )
+
+for i, page in enumerate(EXAM.types):
+    page=dict(page)
+    unanswered_questions.extend(page)
+    correct_questions.extend(page)
+    wrong_questions.extend(page)
+    
+    for current_page in CHOICES[str(i)]:
+        print("Current page",current_page)
+        for question in current_page:
+            print("unaswred questions", question)
+            unanswered_questions[i].remove(question)
+            if answer.id == question.correct_answer:
+                wrong_questions[i].questions.remove(page[0])
+                score+=1
+            else:
+                correct_questions[i].questions.remove(page[0])
+                if score_type:
+                    score-=0.25
+        
+
+
+st.write(f"Your final score is {score}/{total_questions}.")
+
+question_type = st.radio("Select question type to review:", ("All","Correct", "Wrong", "Unanswered"))
+
+

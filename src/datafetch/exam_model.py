@@ -6,13 +6,18 @@ class Image(BaseModel):
     description: str
     image_name: str
 
+class Choice(BaseModel):
+    choice: str
+    id:str
+
 class Question(BaseModel):
     id: str
     question: str
-    choices: List[str]
+    choices: List[Choice]
     images: List[Image]
-    correct_answer: int
+    correct_answer: str
     explanation: str
+
 
 
 class QuestionList(BaseModel):
