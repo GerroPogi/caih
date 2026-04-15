@@ -1,7 +1,17 @@
 import json
-
 import streamlit as st
 
+# class ExamList(list):
+#     def __init__(self, *args):
+#         super().__init__(*args)
+#     def get_instructions(self,index=0):
+#         return self[index][1]
+#     def get_questions(self,index=0):
+#         return self[index][0]
+    
+#     def remove_question(self,question, index=0):
+#         print(f"{self[index][0][1]=}")
+#         self[index][0][1].remove(question)
 
 def print_exam(exam:list):
     pass
@@ -29,25 +39,23 @@ WRONG = 2
 
 
 score_type=st.toggle('Use "Right minus wrong"' )
-
-for i, page in enumerate(EXAM.types):
-    page=dict(page)
-    unanswered_questions.extend(page)
-    correct_questions.extend(page)
-    wrong_questions.extend(page)
+for i, page in enumerate(EXAM.types): # Page: (questions,[questions]),(instructions,"instruction")
+    # page=dict(page)
     
-    for current_page in CHOICES[str(i)]:
-        print("Current page",current_page)
-        for question in current_page:
-            print("unaswred questions", question)
-            unanswered_questions[i].remove(question)
-            if answer.id == question.correct_answer:
-                wrong_questions[i].questions.remove(page[0])
-                score+=1
-            else:
-                correct_questions[i].questions.remove(page[0])
-                if score_type:
-                    score-=0.25
+    unanswered_questions.append(page)
+    correct_questions.append(page)
+    wrong_questions.append(page)
+    # print("Un answered",unanswered_questions) 
+    for question, answer in CHOICES[str(i)]:
+        print("Un answers",question)
+        unanswered_questions[i].questions.remove(question)
+        if answer.id == question.correct_answer:
+            wrong_questions[i].questions.remove(question)
+            score+=1
+        else:
+            correct_questions[i].questions.remove(question)
+            if score_type:
+                score-=0.25
         
 
 

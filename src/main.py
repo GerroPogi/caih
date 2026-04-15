@@ -26,6 +26,7 @@ st.session_state.question_amount = st.slider("Select number of questions for the
 if start:
     st.session_state.question_type=0
     st.session_state.choices={}
+    st.session_state.question_states={}
     st.switch_page("pages/exam.py")
     print("Now going to exam page")
 

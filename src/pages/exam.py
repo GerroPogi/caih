@@ -29,41 +29,54 @@ def render_questions():
     st.write(exam_dict_key)
     for question in current_page_type.questions:
         st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True)
-        def on_choice_click(choice, question):
-            correct_answer = question.correct_answer
+        def on_choice_click(button_id,choice, selected_question):
+            correct_answer = selected_question.correct_answer
+            question_state= st.session_state.question_states[selected_question.id]
             
-            for disable_choice in question.choices:
-                st.session_state[f"button_{question.id}{disable_choice.id.lower()}_value"] = DISABLED
+            for button in question_state.keys():
+                question_state[button] = DISABLED
             print(choice, "choice")
             if choice.id == correct_answer:
-                st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = CORRECT
-                
+                question_state[button_id] = CORRECT
             else:
-                st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = WRONG
-            
+                question_state[button_id]= WRONG
+            # print(question_state, "question state")
             if st.session_state.choices.get(str(st.session_state.question_type)) is None:
                 st.session_state.choices[str(st.session_state.question_type)] = [] # Initialize saving choices
             
             
-            st.session_state.choices[str(st.session_state.question_type)].append((question, choice)) # Saves answer
-            print(st.session_state[f"button_{question.id}{choice.id.lower()}_value"], "this is the value", correct_answer, "this is the correct answer")
+            st.session_state.choices[str(st.session_state.question_type)].append((selected_question, choice)) # Saves answer
+            # print(st.session_state[button_id], "this is the value", correct_answer, "this is the correct answer")
             
             # print(f"Selected button: {selected_button}")  # Print the selected_button)
             
         
-        
+        st.session_state.question_states[question.id] = st.session_state.question_states.get(question.id, {})
+        question_state=st.session_state.question_states[question.id]
         for i, choice in enumerate(question.choices):
             # print(choice,"choice")
-            st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = st.session_state.get(f"button_{question.id}{choice.id.lower()}_value", 0) # Initialize state for each button
+            # st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = st.session_state.get(f"button_{question.id}{choice.id.lower()}_value", 0) 
+            
             # print(f"Initialized button_{question['id']}{choice[0].lower()}_value to {st.session_state[f'button_{question['id']}{choice[0].lower()}_value']}")
-            value = st.session_state[f"button_{question.id}{choice.id.lower()}_value"] 
+            # value = st.session_state[f"button_{question.id}{choice.id.lower()}_value"] 
+            button_id=f"button_{question.id}{choice.id.lower()}"
+            if st.session_state.get(choice.id) is not None:
+                for i in range(1, len(st.session_state.keys())): # When AI adds too much choices
+                    if st.session_state.get(button_id+str(i)) is None:
+                        button_id=button_id+str(i)
+                        break
+            question_state[button_id] = question_state.get(button_id, 0) # Initialize state for each button
+            
+            # print(button_id)
             st.button(
-                f"{choice.id}. {choice.choice}", 
+                f"{choice.choice}", 
                 on_click=on_choice_click, 
-                key=f"button_{question.id}{choice.id.lower()}", 
-                args=(choice, question), # TODO: fix the problem with correct answers being because it is only considering the last question
-                disabled=value!=0, # Default value is 0, if the value changes (the user changed it, refer to on_choice_click) then it will disable.
+                key=button_id, 
+                args=(button_id,choice, question), # TODO: fix the problem with correct answers being because it is only considering the last question
+                disabled=question_state[button_id]!=0, # Default value is 0, if the value changes (the user changed it, refer to on_choice_click) then it will disable.
+                use_container_width=False
                 )
+        
 
 if st.session_state.question_type < len(exam.types):
     render_questions()
@@ -105,14 +118,13 @@ if st.session_state.question_type >= len(exam.types):
     
 # INVISIBLE DATA
 
-for key in st.session_state.keys(): # This adds a class that makes your answer right or wrong based on the previous iteration of the program.
-    if key.startswith("button_"):
-        key_part = key[:-6]
-        if st.session_state[key] == 1:
-            st.markdown(f"<style>.st-key-{key_part} {{ background-color: #30b31e; }}</style>", unsafe_allow_html=True)
-        elif st.session_state[key] == 2:
+for key, choices in st.session_state.question_states.items(): # This adds a class that makes your answer right or wrong based on the previous iteration of the program.
+    for button_id, choice in choices.items():
+        if choice == CORRECT:
+            st.markdown(f"<style>.st-key-{button_id} {{ background-color: #30b31e; }}</style>", unsafe_allow_html=True)
+        elif choice == WRONG:
             
-            st.markdown(f"<style>.st-key-{key_part} {{ background-color: #872b2b; }}</style>", unsafe_allow_html=True)
+            st.markdown(f"<style>.st-key-{button_id} {{ background-color: #872b2b; }}</style>", unsafe_allow_html=True)
         else:
             pass    
         
