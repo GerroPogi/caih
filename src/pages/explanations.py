@@ -15,19 +15,25 @@ from typing import List
 #         print(f"{self[index][0][1]=}")
 #         self[index][0][1].remove(question)
 
-def lower_headings(markdown:str, amount:int=1):
+def lower_headings(markdown: str, amount: int = 1):
     line_by_line = markdown.split("\n")
+    new_lines = []
+    
     for line in line_by_line:
         if line.startswith("#"):
-            line = line[0].replace("#", "#"*amount)+line[1:]
-        # print(line if "According to Boyle's Law" in line else "-")
-    
-    markdown = "\n".join(line_by_line)
-    return markdown
+            # Add the extra hashes to the start
+            new_lines.append("#" * amount + line)
+        else:
+            new_lines.append(line)
+            
+    return "\n".join(new_lines)
 
 def print_exam(exam:List[QuestionList], is_all=False):
     for question_list in exam:
+        if len(question_list.questions) ==0:
+            continue
         st.markdown(f"# {question_list.instruction}")
+        
         for question in question_list.questions:
             st.markdown(f"## {question.id}.  {question.question}", unsafe_allow_html=True)
             if question.answer is None:
@@ -36,9 +42,10 @@ def print_exam(exam:List[QuestionList], is_all=False):
                 user_answer = question.get_choice(question.answer)
             st.write(f"Your answer: {user_answer.choice}")
             st.write(f"Correct answer: {question.get_choice(question.correct_answer).choice}")
-            st.markdown("---"+"\n"
-                        +lower_headings(question.explanation,2)+"\n" 
+            st.write("---"+"\n\n"
+                        +lower_headings(question.explanation,1)+"\n\n" 
                         + "---", unsafe_allow_html=True)
+            print(lower_headings(question.explanation,3))
 
 st.title("Explanations")
 
@@ -102,3 +109,5 @@ elif question_type == "Unanswered":
 else:
     print_exam(EXAM.types)
 
+if st.button("go_back"):
+    st.switch_page("main.py")
