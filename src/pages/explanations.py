@@ -45,7 +45,7 @@ def print_exam(exam:List[QuestionList], is_all=False):
             st.write("---"+"\n\n"
                         +lower_headings(question.explanation,1)+"\n\n" 
                         + "---", unsafe_allow_html=True)
-            print(lower_headings(question.explanation,3))
+            # print(lower_headings(question.explanation,3))
 
 st.title("Explanations")
 
@@ -96,7 +96,7 @@ for i, page in enumerate(EXAM.types): # Page: (questions,[questions]),(instructi
         
 
 
-st.write(f"Your final score is {score}/{total_questions}.")
+st.write(f"Your final score is {max(score,0)}/{total_questions}.")
 
 question_type = st.radio("Select question type to review:", ("All","Correct", "Wrong", "Unanswered"))
 
@@ -109,5 +109,5 @@ elif question_type == "Unanswered":
 else:
     print_exam(EXAM.types)
 
-if st.button("go_back"):
+if st.button("Go Home"):
     st.switch_page("main.py")

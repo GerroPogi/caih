@@ -4,16 +4,23 @@ import streamlit as st
 
 st.title("Exam Page")
 
-def get_data(model,key): pass
 
-@st.cache_data
-def get_exam():
-    print(st.session_state.data.fetch_exam)
-    exam = st.session_state.data.fetch_exam(st.session_state.question_amount,st.session_state.subject)
-    return exam
+@st.cache_resource # Use resource for Pydantic v2 objects with functions
+def get_exam(amount, subject, _data_fetcher):
+    # This will ONLY run if (amount, subject) changes. 
+    # Otherwise, it returns the existing object from memory.
+    print(f"Fetching new exam: {subject} with {amount} questions")
+    return _data_fetcher.fetch_exam(amount, subject)
+
+# Pass the dependencies as arguments
+exam = get_exam(
+    st.session_state.question_amount, 
+    st.session_state.subject, 
+    st.session_state.data
+)
 
 
-exam=get_exam()
+# exam=get_exam()
 st.session_state.exam=exam
 # print(exam,"exam") # Only use for debugging 
 # print(st.session_state.question_type,len(exam))
