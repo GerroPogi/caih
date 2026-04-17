@@ -1,3 +1,13 @@
+# Contributing for Developers
+
+This project needs to be able to do the following:
+
+- [ ] Create reviewers according to mistakes
+- [ ] (If possible) scoring system
+- [ ] Self-evaluating phase
+  - It can evaluate your weakness and tell what you're missing out on
+- [ ] Home page for giving help (Mathdash.com-style)
+
 # Contribute (for students)
 
 The project is run on formatted reviewers that make it possible for AI Generation to create a mock test for you.
