@@ -1,10 +1,11 @@
 # Pydantic Model of what the AI must follow
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Any
 
 class Image(BaseModel):
     description: str
-    image_name: str
+    data: Optional[bytes]
+    name: str
 
 class Choice(BaseModel):
     choice: str
@@ -20,6 +21,13 @@ class Question(BaseModel):
     answer: Optional[str] = None
     def add_answer(self,answer:str):
         self.answer = answer
+    
+    def add_images(self, images: dict):
+        for image in self.images:
+            if image.image_name in images.keys():
+                image.data = images[image.image_name]
+            else:
+                print("cannot find image", image.image_name)
     
     def get_choice(self, choice_id) -> Optional[Choice]:
         for choice in self.choices:
@@ -38,6 +46,9 @@ class QuestionList(BaseModel):
             self.questions = [question for question in self.questions if question.id != question_id]
         except ValueError:
             pass
+    def add_images(self, images: dict):
+        for question in self.questions:
+            question.add_images(images)
     
     def add_answer(self, question_id, answer):
         for question in self.questions:
@@ -49,3 +60,7 @@ class QuestionList(BaseModel):
 
 class Exam(BaseModel):
     types: List[QuestionList]
+    
+    def add_images(self, images: dict):
+        for question_list in self.types:
+            question_list.add_images(images)

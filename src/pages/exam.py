@@ -12,6 +12,11 @@ def get_exam(amount, subject, _data_fetcher):
     print(f"Fetching new exam: {subject} with {amount} questions")
     return _data_fetcher.fetch_exam(amount, subject)
 
+def img_to_base64(img_path):
+    with open(img_path, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode()
+    return f"data:image/png;base64,{encoded_string}"
+
 # Pass the dependencies as arguments
 exam = get_exam(
     st.session_state.question_amount, 
@@ -35,7 +40,17 @@ def render_questions():
     exam_dict_key =current_page_type.instruction # Grabs the instructions
     st.write(exam_dict_key)
     for question in current_page_type.questions:
-        st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True)
+        
+        if len(question.images) != 0:
+            for image in question.images:
+                # pass
+                # print(image)
+                question.question = question.question.replace(image.image_name,f"data:image/png;base64,{image.data}")
+            # print(question.question)
+            st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True) 
+                # st.image(f"data:image/png;base64,{image.data}", width=300, caption=image.description)
+        else:
+            st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True)
         def on_choice_click(button_id,choice, selected_question):
             correct_answer = selected_question.correct_answer
             question_state= st.session_state.question_states[selected_question.id]

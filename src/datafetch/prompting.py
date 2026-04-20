@@ -3,6 +3,7 @@ from random import choice, randint
 from ollama import Client
 from .exam_model import Exam
 from math import ceil
+from time import sleep
 
 def load_exam(file_path="assets",subject=""):
     path=os.path.join(file_path, subject.lower())
@@ -32,7 +33,7 @@ def get_random_cuts(questions)-> list[int]:
 def get_exam_from_ai(questions, subject):
     client = Client()
     cuts = get_random_cuts(questions)
-    example_json = []
+    example_json = [] # The example the AI must referenec
     image_list = [] # used for giving the AI the image
     formatted_images={} # Used to retrieve the image by assigning names
     for cut in cuts:
@@ -42,14 +43,20 @@ def get_exam_from_ai(questions, subject):
         if any("images" in question for question in exam): # Imports the image if it exists and removes it to save space
             for question in exam:
                 if question.get("images",[]):
-                    images:dict =question.get("images")
-                    question["images"] = images.keys()
-                    image_list.extend(images)
-                    for image_name, image in zip(images,question.get("images")):
-                        formatted_images[image_name]=image
-        example_json.extend(exam)
+                    # This gets the dict of images
+                    images=question.get("images")
+                    
+                    # Replace the images with their names
+                    question["images"] = list(images.keys())
+                    
+                    # Adds to the list of used images
+                    image_list.append(*images.values())
+                    formatted_images.update(images)
+                    print(type(question.get("images")))
+        example_json.append(exam)
     # We only need a slice for context
-    print(example_json)
+    # print(example_json)
+    # print(json.dumps(example_json))
 
     messages = [
         {
@@ -69,9 +76,12 @@ def get_exam_from_ai(questions, subject):
                 f"\n\n### REFERENCE EXAMPLE:\n{json.dumps(example_json)}" # FIXME: Problem with Json things
                 "\n\n### STRICT RULES:"
                 "\n1. The 'id' must start at 1 and increment sequentially."
-                "\n2. 'correct_answer' must be the choice id of the correc answer."
+                "\n2. 'correct_answer' must be the choice id of the correct answer."
                 "\n3. Map descriptions to the provided images accurately."
                 "\n4. Return ONLY the raw JSON."
+                "\n5. Put the data of the image in the 'images' key where it was referenced."
+                "\n6. You may not create any new image. Only use the provided ones and use the same name used in the question."
+                "\n7. You must use the same name for the image used in the question, you may not use the image data itself."
             ),
             "images": image_list  # Ensure your Ollama client supports the 'images' key here
         },
@@ -88,9 +98,11 @@ def get_exam_from_ai(questions, subject):
                 )
             raw_content = response.message.content
             final_exam = Exam.model_validate_json(raw_content)
+            final_exam.add_images(formatted_images)
         except Exception as e:
             print(f"Error: {e}. Retrying...")
             final_exam = None
+            sleep(2) # To avoid rate limits
         if final_exam:
             break
     

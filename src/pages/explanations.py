@@ -28,7 +28,7 @@ def lower_headings(markdown: str, amount: int = 1):
             
     return "\n".join(new_lines)
 
-def print_exam(exam:List[QuestionList], is_all=False):
+def print_exam(exam:List[QuestionList], is_all=False): # TODO: Add an explain button
     for question_list in exam:
         if len(question_list.questions) ==0:
             continue
@@ -36,16 +36,20 @@ def print_exam(exam:List[QuestionList], is_all=False):
         
         for question in question_list.questions:
             st.markdown(f"## {question.id}.  {question.question}", unsafe_allow_html=True)
-            if question.answer is None:
+            if question.answer == None:
                 st.write("You did not answer this question")
+                print(question.answer)
+                pass
             else:
                 user_answer = question.get_choice(question.answer)
-            st.write(f"Your answer: {user_answer.choice}")
+                st.write(f"Your answer: {user_answer.choice}")
+            
             st.write(f"Correct answer: {question.get_choice(question.correct_answer).choice}")
             st.write("---"+"\n\n"
                         +lower_headings(question.explanation,1)+"\n\n" 
                         + "---", unsafe_allow_html=True)
             # print(lower_headings(question.explanation,3))
+            # user_answer=None # reset the data
 
 st.title("Explanations")
 
