@@ -12,8 +12,6 @@ st.set_page_config(
 )
 
 
-
-print("In main page")
 st.title("Welcome to the Exam Generator!")
 st.write("Click the button below to generate a new exam.")
 start = st.button("Generate Exam")
@@ -33,5 +31,4 @@ if start:
     st.session_state.timer = Timer()
     
     st.switch_page("pages/exam.py")
-    print("Now going to exam page")
 

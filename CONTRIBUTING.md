@@ -9,7 +9,7 @@ This project needs to be able to do the following:
 - [ ] Home page for giving help (Mathdash.com-style)
 - [ ] Recheck questions
 - [ ] Ask for a better explanation
-- [ ] Timer
+- [x] Timer
 
 # Contribute (for students)
 

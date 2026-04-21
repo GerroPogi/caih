@@ -32,14 +32,8 @@ exam = get_exam(
 timer = st.session_state.timer
 if timer.ended:
     st.session_state.question_type = len(exam.types)
-
-# exam=get_exam()
 st.session_state.exam=exam
-# print(exam,"exam") # Only use for debugging 
-# print(st.session_state.question_type,len(exam))
-
 current_page_type = exam.types[min(st.session_state.question_type,len(exam.types)-1)]
-# print(current_page_type)
 
 st.write(f"### Time left: {time.strftime('%M:%S', time.gmtime(timer.get_time_left()))}")
 
@@ -53,12 +47,9 @@ def render_questions():
         
         if len(question.images) != 0:
             for image in question.images:
-                # pass
-                # print(image)
+
                 question.question = question.question.replace(image.image_name,f"data:image/png;base64,{image.data}")
-            # print(question.question)
             st.markdown(f"#### {question.id}.  {question.question}", unsafe_allow_html=True) 
-                # st.image(f"data:image/png;base64,{image.data}", width=300, caption=image.description)
         else:
             st.markdown(f"#### {question.id}.  {question.question}", unsafe_allow_html=True)
         def on_choice_click(button_id,choice, selected_question):
@@ -67,26 +58,19 @@ def render_questions():
             
             for button in question_state.keys():
                 question_state[button] = DISABLED
-            print(choice, "choice")
             if choice.id == correct_answer:
                 question_state[button_id] = CORRECT
             else:
                 question_state[button_id]= WRONG
-            # print(question_state, "question state")
             if st.session_state.choices.get(str(st.session_state.question_type)) is None:
                 st.session_state.choices[str(st.session_state.question_type)] = [] # Initialize saving choices
             
             
             st.session_state.choices[str(st.session_state.question_type)].append((selected_question, choice)) # Saves answer
-            # print(st.session_state[button_id], "this is the value", correct_answer, "this is the correct answer")
-            
-            # print(f"Selected button: {selected_button}")  # Print the selected_button)
-            
         
         st.session_state.question_states[question.id] = st.session_state.question_states.get(question.id, {})
         question_state=st.session_state.question_states[question.id]
         for i, choice in enumerate(question.choices):
-            # print(choice,"choice")
             # st.session_state[f"button_{question.id}{choice.id.lower()}_value"] = st.session_state.get(f"button_{question.id}{choice.id.lower()}_value", 0) 
             
             # print(f"Initialized button_{question['id']}{choice[0].lower()}_value to {st.session_state[f'button_{question['id']}{choice[0].lower()}_value']}")
