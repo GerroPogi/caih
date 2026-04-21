@@ -1,16 +1,21 @@
-import json
+import json,time
 
 import streamlit as st
 
 st.title("Exam Page")
 
 
-@st.cache_resource # Use resource for Pydantic v2 objects with functions
+@st.cache_resource
 def get_exam(amount, subject, _data_fetcher):
-    # This will ONLY run if (amount, subject) changes. 
-    # Otherwise, it returns the existing object from memory.
-    print(f"Fetching new exam: {subject} with {amount} questions")
-    return _data_fetcher.fetch_exam(amount, subject)
+    exam = _data_fetcher.fetch_exam(amount, subject)
+    # Pre-process images HERE so it only happens once
+    for category in exam.types:
+        for q in category.questions:
+            for img in q.images:
+                q.question = q.question.replace(img.image_name, f"data:image/png;base64,{img.data}")
+    
+    st.session_state.timer.start(st.session_state.time_amount)
+    return exam
 
 def img_to_base64(img_path):
     with open(img_path, "rb") as image_file:
@@ -24,6 +29,9 @@ exam = get_exam(
     st.session_state.data
 )
 
+timer = st.session_state.timer
+if timer.ended:
+    st.session_state.question_type = len(exam.types)
 
 # exam=get_exam()
 st.session_state.exam=exam
@@ -33,12 +41,14 @@ st.session_state.exam=exam
 current_page_type = exam.types[min(st.session_state.question_type,len(exam.types)-1)]
 # print(current_page_type)
 
+st.write(f"### Time left: {time.strftime('%M:%S', time.gmtime(timer.get_time_left()))}")
+
 CORRECT = 1
 WRONG = 2
 DISABLED = 3
 def render_questions():
     exam_dict_key =current_page_type.instruction # Grabs the instructions
-    st.write(exam_dict_key)
+    st.write("## "+exam_dict_key)
     for question in current_page_type.questions:
         
         if len(question.images) != 0:
@@ -47,10 +57,10 @@ def render_questions():
                 # print(image)
                 question.question = question.question.replace(image.image_name,f"data:image/png;base64,{image.data}")
             # print(question.question)
-            st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True) 
+            st.markdown(f"#### {question.id}.  {question.question}", unsafe_allow_html=True) 
                 # st.image(f"data:image/png;base64,{image.data}", width=300, caption=image.description)
         else:
-            st.markdown(f"{question.id}.  {question.question}", unsafe_allow_html=True)
+            st.markdown(f"#### {question.id}.  {question.question}", unsafe_allow_html=True)
         def on_choice_click(button_id,choice, selected_question):
             correct_answer = selected_question.correct_answer
             question_state= st.session_state.question_states[selected_question.id]
@@ -82,11 +92,11 @@ def render_questions():
             # print(f"Initialized button_{question['id']}{choice[0].lower()}_value to {st.session_state[f'button_{question['id']}{choice[0].lower()}_value']}")
             # value = st.session_state[f"button_{question.id}{choice.id.lower()}_value"] 
             button_id=f"button_{question.id}{choice.id.lower()}"
-            if st.session_state.get(choice.id) is not None:
-                for i in range(1, len(st.session_state.keys())): # When AI adds too much choices
-                    if st.session_state.get(button_id+str(i)) is None:
-                        button_id=button_id+str(i)
-                        break
+            # if st.session_state.get(choice.id) is not None:
+            #     for i in range(1, len(st.session_state.keys())): # When AI adds too much choices
+            #         if st.session_state.get(button_id+str(i)) is None:
+            #             button_id=button_id+str(i)
+            #             break
             question_state[button_id] = question_state.get(button_id, 0) # Initialize state for each button
             
             # print(button_id)
@@ -159,3 +169,8 @@ st.markdown(
     </style>
     """, unsafe_allow_html=True
 )
+
+# Instead of just st.rerun()
+if not timer.ended:
+    time.sleep(0.1) # Prevents the script from pegged CPU usage
+    st.rerun()

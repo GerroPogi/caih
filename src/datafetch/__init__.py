@@ -10,3 +10,5 @@ class DataFetcher:
 
     def fetch_explanation(self, exam):
         return explain_exam(exam)
+    
+    

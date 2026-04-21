@@ -54,6 +54,7 @@ def get_exam_from_ai(questions, subject):
                     formatted_images.update(images)
                     print(type(question.get("images")))
         example_json.append(exam)
+    print(cuts)
     # We only need a slice for context
     # print(example_json)
     # print(json.dumps(example_json))
@@ -90,6 +91,7 @@ def get_exam_from_ai(questions, subject):
         final_exam = None
         # Using Gemini 3 Flash for high reliability
         try:
+            print("Trying to generate questions...")
             response = client.chat(
                 'gemini-3-flash-preview:latest', 
                 messages=messages, 
@@ -99,6 +101,7 @@ def get_exam_from_ai(questions, subject):
             raw_content = response.message.content
             final_exam = Exam.model_validate_json(raw_content)
             final_exam.add_images(formatted_images)
+            print(f"Successfully generated {len(final_exam.types)} questions.")
         except Exception as e:
             print(f"Error: {e}. Retrying...")
             final_exam = None

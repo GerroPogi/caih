@@ -7,6 +7,9 @@ This project needs to be able to do the following:
 - [ ] Self-evaluating phase
   - It can evaluate your weakness and tell what you're missing out on
 - [ ] Home page for giving help (Mathdash.com-style)
+- [ ] Recheck questions
+- [ ] Ask for a better explanation
+- [ ] Timer
 
 # Contribute (for students)
 
