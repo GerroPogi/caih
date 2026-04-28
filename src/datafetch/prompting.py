@@ -1,9 +1,11 @@
 import json, os, re
 from random import choice, randint
 from ollama import Client
-from .exam_model import Exam
+from .exam_model import Exam, QuestionList
+from .explanation_model import Lesson
 from math import ceil
 from time import sleep
+from typing import List
 
 def load_exam(file_path="assets",subject=""):
     path=os.path.join(file_path, subject.lower())
@@ -103,7 +105,7 @@ def get_exam_from_ai(questions, subject):
             final_exam.add_images(formatted_images)
             print(f"Successfully generated {len(final_exam.types)} questions.")
         except Exception as e:
-            print(f"Error: {e}. Retrying...")
+            print(f"Error in generating exam: {e}. Retrying...")
             final_exam = None
             sleep(2) # To avoid rate limits
         if final_exam:
@@ -111,23 +113,87 @@ def get_exam_from_ai(questions, subject):
     
     return final_exam
 
-def explain_exam(exam): # Deprecated for now
+def explain_exam(exam: List[QuestionList]): 
+    # Remove images 
+    # for question in exam: # TODO: Remove images before going into Gemini, then return it like from get_exam_from_ai
+    #     if question.get("images", []):
+    #         question["images"] = list(question["images"].keys())
+    images={}
+    for question_list in exam:
+        print(question_list)
+        if question_list.has_images():
+            images.update(question_list.get_images())
+            question_list.remove_images()
+    
+    
     client = Client()
     messages = [
         {
-            'role': 'user',
-            'content': f'Provide a clear, educational explanation for these questions. Focus on the logic behind the correct answers: {json.dumps(exam)}',
+            'role': 'system', 
+            'content': (
+                "You are a master educator specializing in academic recovery and curriculum design. "
+                "Your goal is to convert exam errors into structured, objective study notes. "
+                "Follow these structural principles:\n"
+                "1. Logical Mapping: Identify the specific principle violated in each incorrect answer.\n"
+                "2. Objective Rectification: Provide a direct, factual bridge between the error and the correct concept.\n"
+                "3. Systematic Organization: Present information in a clear, hierarchical format suitable for high-school level review.\n"
+                "4. Multi-Modal Synthesis: Integrate visual data from provided images into the logical explanations.\n\n"
+                "Output must be strictly raw JSON matching the provided schema."
+            )
         },
+        {
+            'role': 'user',
+            'content': (
+                f"### EXAM DATA:\n{json.dumps([question_list.model_dump() for question_list in exam])}\n\n"
+                "### SUPPLEMENTAL DATA:\n"
+                "- Use context from history data.\n"
+                "- Incorporate provided mnemonics as technical memory aids.\n\n"
+                "### TASK:\n"
+                "1. Analyze the exam questions and images to identify core conceptual gaps.\n"
+                "2. Formulate a 'core_explanation' that focuses on the objective logic and facts missed by the student.\n"
+                "3. Generate a 'similar_exam' with at least 3 new questions that rigorously test the same underlying principles.\n\n"
+                f"### SCHEMA:\n{Lesson.model_json_schema()}\n\n"
+                "### CONSTRAINTS:\n"
+                "- Do not use markdown backticks (```json).\n"
+                "- Maintain an objective, academic tone; avoid conversational or entertaining fillers.\n"
+                "- Ensure the 'similar_exam' focuses on practical application of the concepts.\n"
+                "- Ensure the JSON is valid and mirrors the internal logic of the missed questions."
+            ),
+            'images': images.values()
+        }
     ]
-    # OSS is fine for prose/explanations
-    response = client.chat('gpt-oss:120b-cloud', messages=messages, stream=False)
-    return response.message.content.strip()
+    while True: # Infinite Loop in case AI make mistakes
+        final_lesson = None
+        # Using Gemini 3 Flash for high reliability
+        try:
+            print("Trying to generate lesson...")
+            response = client.chat(
+                'gemini-3-flash-preview:latest', 
+                messages=messages, 
+                stream=False,
+                format=Lesson.model_json_schema(),
+                )
+            raw_content = response.message.content
+            final_lesson = Lesson.model_validate_json(raw_content)
+            final_lesson.add_images(images)
+            
+        except Exception as e:
+            print(f"Error in explaining exam: {e}. Retrying...")
+            final_lesson = None
+            sleep(2) # To avoid rate limits
+        if final_lesson:
+            break
+    return final_lesson
 
 if __name__ == "__main__":
     # Test the AI generation
     try:
         new_exam = get_exam_from_ai(questions=5,subject="mathematics")
-        print(f"Successfully generated {len(new_exam)} questions.")
-        print(json.dumps(new_exam[0], indent=2))
+        # print(f"Successfully generated {len([*question_list.questions for question_list in new_exam.types])} questions.") # Dont use this, this gives an error
+        new_explanation = explain_exam(new_exam.types)
+        print(f"Successfully generated explanation.")
+        print(new_explanation)
+        
+        # print(json.dumps(new_exam[0], indent=2))
     except Exception as e:
         print(f"Error: {e}")

@@ -10,6 +10,7 @@ This project needs to be able to do the following:
 - [ ] Recheck questions
 - [ ] Ask for a better explanation
 - [x] Timer
+- [ ] Flashcard function
 
 # Contribute (for students)
 

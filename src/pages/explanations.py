@@ -28,7 +28,13 @@ def lower_headings(markdown: str, amount: int = 1):
             
     return "\n".join(new_lines)
 
-def print_exam(exam:List[QuestionList], is_all=False): # TODO: Add an explain button
+@st.cache_resource
+def create_lesson(exam:List[QuestionList]):
+    st.session_state.lesson = st.session_state.data.create_lesson(exam)
+    st.switch_page("pages/lesson.py")
+    
+
+def print_exam(exam:List[QuestionList], is_all=False):
     for question_list in exam:
         if len(question_list.questions) ==0:
             continue
@@ -48,8 +54,8 @@ def print_exam(exam:List[QuestionList], is_all=False): # TODO: Add an explain bu
             st.write("---"+"\n\n"
                         +lower_headings(question.explanation,1)+"\n\n" 
                         + "---", unsafe_allow_html=True)
-            # print(lower_headings(question.explanation,3))
-            # user_answer=None # reset the data
+    if st.button("Create a new lesson"):
+        create_lesson(exam)
 
 st.title("Explanations")
 
