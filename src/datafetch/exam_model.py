@@ -93,6 +93,11 @@ class QuestionList(BaseModel):
     def remove_images(self):
         for question in self.questions:
             question.remove_images()
+    
+    def get_question(self, id):
+        for question in self.questions:
+            if question.id == id:
+                return question
 
 class Exam(BaseModel):
     types: List[QuestionList]

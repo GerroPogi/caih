@@ -1,7 +1,7 @@
 import json, os, re
 from random import choice, randint
 from ollama import Client
-from .exam_model import Exam, QuestionList
+from .exam_model import Exam, QuestionList, Question
 from .explanation_model import Lesson
 from math import ceil
 from time import sleep
@@ -184,6 +184,43 @@ def explain_exam(exam: List[QuestionList]):
         if final_lesson:
             break
     return final_lesson
+
+def remake_explanation(question: Question):
+    client= Client()
+    messages = [
+        {
+            'role': 'system',
+            'content': (
+                "You are an expert academic tutor. Your task is to rewrite the provided "
+                "explanation to maximize clarity, logical progression, and technical accuracy. "
+                "Follow these principles:\n"
+                "1. Objective Precision: Use formal, academic language. Eliminate all "
+                "conversational fillers, anecdotes, or motivational language.\n"
+                "2. Logical Sequencing: Present the explanation in a step-by-step "
+                "deductive format, ensuring each point leads naturally to the next.\n"
+                "3. Fact-Driven: Focus strictly on the underlying principles, definitions, "
+                "and evidence required to answer the question.\n"
+                "4. Structure: Use clear signposting (e.g., 'Step 1', 'Definition', 'Conclusion') "
+                "to organize the text for student notes."
+            )
+        },
+        {
+            "role": "user",
+            'content': (
+                f"Original question with explanation: {json.dumps(question.model_dump())}\n\n"
+                "TASK: Remake the explanation into a formal, structured academic note. "
+                "The output must be plain text only. Do not use markdown backticks or JSON formatting. "
+                "Maintain a strictly objective and neutral tone."
+            )
+        }
+    ]
+    response = client.chat(
+        'gemini-3-flash-preview:latest', 
+        messages=messages, 
+        stream=False,
+        format=Lesson.model_json_schema(),
+        )
+    return response.message.content
 
 if __name__ == "__main__":
     # Test the AI generation

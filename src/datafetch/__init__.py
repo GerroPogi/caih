@@ -1,7 +1,7 @@
 
-from .prompting import get_exam_from_ai, explain_exam
+from .prompting import get_exam_from_ai, explain_exam, remake_explanation
 from typing import List
-from datafetch.exam_model import QuestionList
+from datafetch.exam_model import QuestionList, Question
 from datafetch.explanation_model import Lesson
 import os, json
 from json import dump
@@ -34,3 +34,5 @@ class DataFetcher:
     def get_lesson(self, lesson_name:str=""):
         with open(f"./saved_lessons/{lesson_name}", "r") as f:
             return Lesson(**json.load(f))
+    def remake_explanation(self, question: Question):
+        return remake_explanation(question)

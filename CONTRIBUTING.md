@@ -8,7 +8,8 @@ This project needs to be able to do the following:
   - It can evaluate your weakness and tell what you're missing out on
 - [ ] Home page for giving help (Mathdash.com-style)
 - [ ] Recheck questions
-- [ ] Ask for a better explanation
+- [x] Ask for a better explanation
+- [ ] Ask questions according to problem
 - [x] Timer
 - [ ] Flashcard function
 

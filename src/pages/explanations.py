@@ -44,7 +44,6 @@ def print_exam(exam:List[QuestionList], is_all=False):
             st.markdown(f"## {question.id}.  {question.question}", unsafe_allow_html=True)
             if question.answer == None:
                 st.write("You did not answer this question")
-                print(question.answer)
                 pass
             else:
                 user_answer = question.get_choice(question.answer)
@@ -54,6 +53,17 @@ def print_exam(exam:List[QuestionList], is_all=False):
             st.write("---"+"\n\n"
                         +lower_headings(question.explanation,1)+"\n\n" 
                         + "---", unsafe_allow_html=True)
+            col1, col2 = st.columns(2)
+            with col1: # Ask for better explanation
+                if st.button("Ask for better explanation",key=f"explanation-{question.id}"):
+                    print(question.explanation)
+                    with st.spinner("Making better explanation..."):
+                        question.explanation =  st.session_state.data.remake_explanation(question)
+                        st.rerun()
+                        
+                
+            with col2: # Ask chat for help
+                pass
     if not EXAM.is_lesson:
         if st.button("Create a new lesson"):
             create_lesson(exam)
