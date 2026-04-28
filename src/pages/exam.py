@@ -23,11 +23,14 @@ def img_to_base64(img_path):
     return f"data:image/png;base64,{encoded_string}"
 
 # Pass the dependencies as arguments
-exam = get_exam(
-    st.session_state.question_amount, 
-    st.session_state.subject, 
-    st.session_state.data
-)
+if st.session_state.exam is None:
+    exam = get_exam(
+        st.session_state.question_amount, 
+        st.session_state.subject, 
+        st.session_state.data
+    )
+else:
+    exam = st.session_state.exam
 
 timer = st.session_state.timer
 if timer.ended:
@@ -35,7 +38,10 @@ if timer.ended:
 st.session_state.exam=exam
 current_page_type = exam.types[min(st.session_state.question_type,len(exam.types)-1)]
 
-st.write(f"### Time left: {time.strftime('%M:%S', time.gmtime(timer.get_time_left()))}")
+if timer.started: # If there is an exam that has just been generated, it will show the timer, if there is no timer, it will not
+    st.write(f"### Time left: {time.strftime('%M:%S', time.gmtime(timer.get_time_left()))}") 
+
+
 
 CORRECT = 1
 WRONG = 2

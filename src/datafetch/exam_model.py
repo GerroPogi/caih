@@ -12,7 +12,7 @@ class Choice(BaseModel):
     id:str
 
 class Question(BaseModel):
-    id: str
+    id: int
     question: str
     choices: List[Choice]
     images: List[Image]
@@ -96,6 +96,8 @@ class QuestionList(BaseModel):
 
 class Exam(BaseModel):
     types: List[QuestionList]
+    subject: str
+    is_lesson: bool
     
     def add_images(self, images: dict):
         for question_list in self.types:

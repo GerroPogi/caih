@@ -25,7 +25,7 @@
       {
         "questions": [
           {
-            "id": "ref_1",
+            "id": 1,
             "question": "An unknown specimen is observed under a microscope. It possesses a cell membrane and ribosomes but lacks a nucleus and mitochondria. According to Cell Theory, is this specimen a cell?",
             "choices": [
               { "choice": "No, because it lacks a nucleus.", "id": "A" },
@@ -48,7 +48,7 @@
             "answer": null
           },
           {
-            "id": "ref_2",
+            "id": 2,
             "question": "A spacecraft in a vacuum fires its engines to produce a constant net force. If the spacecraft ejects half of its mass while the engine force remains constant, what happens to the acceleration?",
             "choices": [
               { "choice": "It is halved.", "id": "A" },
@@ -62,7 +62,7 @@
             "answer": null
           },
           {
-            "id": "ref_3",
+            "id": 3,
             "question": "Solution A has a pH of 2 and Solution B has a pH of 5. Which statement accurately compares the two?",
             "choices": [
               {
@@ -87,7 +87,9 @@
         ],
         "instruction": "Apply fundamental scientific laws and theories to solve the following problems."
       }
-    ]
+    ],
+    "subject": "Foundational Principles of Biology, Physics, and Chemistry",
+    "is_lesson": true
   },
   "images": [],
   "saved": true

@@ -1,5 +1,8 @@
 import streamlit as st
 import json
+from datafetch.exam_model import Exam
+from utils.initiate_exam import initate_exam
+from datafetch.exam_model import Exam
 
 def format_tabs(text:str, tab_amount:int = 8):
     return f"{"&nbsp;"*tab_amount}{("&nbsp;"*8).join(text.split("\n"))}"
@@ -39,3 +42,8 @@ with col3:
 
 if go_home:
     st.switch_page("main.py")
+
+if try_exam:
+    initate_exam()
+    st.session_state.exam=lesson.similar_exam
+    st.switch_page("pages/exam.py")

@@ -2,8 +2,8 @@
 
 from datafetch import DataFetcher
 from utils.timer import Timer
-import streamlit as st
-import os
+from utils.initiate_exam import initate_exam
+import streamlit as st, os
 
 st.set_page_config(
     page_title="Exam Generator"
@@ -32,15 +32,9 @@ with st.container(horizontal_alignment="left",border=True):
 
 if start:
     st.cache_resource.clear()
-
     st.session_state.question_amount=question_amount
-    st.session_state.question_type=0
-    st.session_state.exam=None
-    st.session_state.choices={}
-    st.session_state.question_states={}
     st.session_state.time_amount= time_amount*60 # Converts into seconds
-    
-    st.session_state.timer = Timer()
+    initate_exam()
     
     st.switch_page("pages/exam.py")
 

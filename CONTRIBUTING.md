@@ -2,7 +2,7 @@
 
 This project needs to be able to do the following:
 
-- [ ] Create reviewers according to mistakes
+- [x] Create reviewers according to mistakes
 - [ ] (If possible) scoring system
 - [ ] Self-evaluating phase
   - It can evaluate your weakness and tell what you're missing out on

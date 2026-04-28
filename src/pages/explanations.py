@@ -1,6 +1,6 @@
 import json, copy
 import streamlit as st
-from datafetch.exam_model import QuestionList
+from datafetch.exam_model import QuestionList, Exam
 from typing import List
 
 # class ExamList(list):
@@ -54,8 +54,9 @@ def print_exam(exam:List[QuestionList], is_all=False):
             st.write("---"+"\n\n"
                         +lower_headings(question.explanation,1)+"\n\n" 
                         + "---", unsafe_allow_html=True)
-    if st.button("Create a new lesson"):
-        create_lesson(exam)
+    if not EXAM.is_lesson:
+        if st.button("Create a new lesson"):
+            create_lesson(exam)
 
 st.title("Explanations")
 
@@ -80,29 +81,47 @@ WRONG = 2
 
 
 score_type=st.toggle('Use "Right minus wrong"' )
-for i, page in enumerate(EXAM.types): # Page: (questions,[questions]),(instructions,"instruction")
+if CHOICES == {}: # if no choices has been made
+    for i, page in enumerate(EXAM.types): # Page: (questions,[questions]),(instructions,"instruction")
     # page=dict(page)
     
-    unanswered_questions.append(copy.deepcopy(page))
-    correct_questions.append(copy.deepcopy(page))
-    wrong_questions.append(copy.deepcopy(page))
-    # print("Un answered",unanswered_questions) 
-    for question, answer in CHOICES[str(i)]:
-        try:
-            unanswered_questions[i].delete_question(question.id)
-        except:
-            pass
-        if answer.id == question.correct_answer: # Correct
-            wrong_questions[i].delete_question(question.id)
-            correct_questions[i].add_answer(question.id, answer.id)
-            page.add_answer(question.id, answer.id)
-            score+=1
-        else: # Wrong
-            correct_questions[i].delete_question(question.id)
-            wrong_questions[i].add_answer(question.id, answer.id)
-            page.add_answer(question.id, answer.id)
-            if score_type:
-                score-=0.25
+        unanswered_questions.append(copy.deepcopy(page))
+        correct_questions.append(copy.deepcopy(page))
+        wrong_questions.append(copy.deepcopy(page))
+        # print("Un answered",unanswered_questions) 
+        
+        for question in page.questions:
+            try:
+                correct_questions[i].delete_question(question.id)
+                wrong_questions[i].delete_question(question.id)
+                
+            except:
+                pass
+else:
+    for i, page in enumerate(EXAM.types): # Page: (questions,[questions]),(instructions,"instruction")
+        # page=dict(page)
+        
+        unanswered_questions.append(copy.deepcopy(page))
+        correct_questions.append(copy.deepcopy(page))
+        wrong_questions.append(copy.deepcopy(page))
+        # print("Un answered",unanswered_questions) 
+        
+        for question, answer in CHOICES.get(i,[]):
+            try:
+                unanswered_questions[i].delete_question(question.id)
+            except:
+                pass
+            if answer.id == question.correct_answer: # Correct
+                wrong_questions[i].delete_question(question.id)
+                correct_questions[i].add_answer(question.id, answer.id)
+                page.add_answer(question.id, answer.id) # Puts back the original answer
+                score+=1
+            else: # Wrong
+                correct_questions[i].delete_question(question.id)
+                wrong_questions[i].add_answer(question.id, answer.id)
+                page.add_answer(question.id, answer.id) # Puts back the original answer
+                if score_type:
+                    score-=0.25
         
 
 
