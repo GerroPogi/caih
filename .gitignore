@@ -4,4 +4,8 @@
 .venv
 .env
 src/test.py
-.obsidian/ 
+.obsidian/
+
+
+flashcards/
+saved_lessons/*

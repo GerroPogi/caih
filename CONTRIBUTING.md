@@ -11,7 +11,8 @@ This project needs to be able to do the following:
 - [x] Ask for a better explanation
 - [ ] Ask questions according to problem
 - [x] Timer
-- [ ] Flashcard function
+- [x] Flashcard function
+- [ ] Make the flashcards look better
 
 # Contribute (for students)
 

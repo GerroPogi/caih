@@ -11,7 +11,7 @@ This tool is made specifically for Philippine Colleges (e.g. UP, UST, DLSU) Admi
 2. Download the source code by clicking: `Code > Download Zip` or `git clone https://github.com/gerro-abarabar/caih.git` in your terminal
 3. Install the required libraries by doing `pip install -r requirements.txt` or `pip3 install -r requirements.txt` if you're in Mac or Linux
 4. Install [Ollama](https://ollama.com/).
-5. Pull the cloud models by doing `ollama pull gemini-3-flash-preview:latest`
+5. Pull the cloud models by doing `ollama pull gemma4:31b-cloud`
 6. Run the program by doing `streamlit run src/main.py`.
 7. Enjoy studying!
 
@@ -19,4 +19,4 @@ This tool is made specifically for Philippine Colleges (e.g. UP, UST, DLSU) Admi
 ## Contributing
 We need your help to improve this small project by adding more reviewers.
 
-Read the [Step-By-Step Contribution Guide](CONTRIBUTING.md) 
+Read the [Step-By-Step Contribution Guide](CONTRIBUTING.md)

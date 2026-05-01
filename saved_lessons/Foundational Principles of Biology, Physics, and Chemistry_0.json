@@ -5,19 +5,23 @@
   "memory_aids": [
     {
       "tool": "The ABC of Cell Theory",
-      "application": "A: All organisms are made of cells; B: Basic unit of life; C: Cells come from pre-existing cells."
+      "application": "A: All organisms are made of cells; B: Basic unit of life; C: Cells come from pre-existing cells.",
+      "images": []
     },
     {
       "tool": "Double the Push, Double the Dash",
-      "application": "In F=ma, if you double the Force (push), you must double the Acceleration (dash) if mass stays the same."
+      "application": "In F=ma, if you double the Force (push), you must double the Acceleration (dash) if mass stays the same.",
+      "images": []
     },
     {
       "tool": "Low is Sour, High is Bitter",
-      "application": "Low pH (0-6) relates to acids (sour like lemons); High pH (8-14) relates to bases (bitter like soap)."
+      "application": "Low pH (0-6) relates to acids (sour like lemons); High pH (8-14) relates to bases (bitter like soap).",
+      "images": []
     },
     {
       "tool": "Ignite the Igneous",
-      "application": "Think of 'igniting' a fire. Igneous rocks come from the 'fire' of magma and lava."
+      "application": "Think of 'igniting' a fire. Igneous rocks come from the 'fire' of magma and lava.",
+      "images": []
     }
   ],
   "similar_exam": {
